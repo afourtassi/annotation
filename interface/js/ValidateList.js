@@ -19,7 +19,7 @@ function ValidateList (corpus, links_mode)
 	// Langue de l'interface
 	// Nativement, le français ("fr") et l'anglais ("en") sont disponibles
 	// Voir le fichier interface_strings.js à ce sujet
-	this.language = "fr";
+	this.language = "en";
 
 	// Noeuds principaux
 	this.main_node 		= $("#validator");
