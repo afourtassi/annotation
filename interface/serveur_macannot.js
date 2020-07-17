@@ -73,7 +73,8 @@ console.log(req.url+'  '+url.pathname+'  '+req.method);
         function ()
         {
 	console.log("mydata="+mydata); 
-	var dajs = JSON.parse(mydata);
+        var dajs = JSON.parse(mydata);
+        mydata = JSON.stringify(dajs, null, 2);
         console.log("received: "+dajs.header.filename+" - annotated by : "+dajs.annotation.name); 
 	var t = new Date();
 	var dirdata=annotator_data_dir(dajs.annotation.name);
@@ -82,12 +83,13 @@ console.log(req.url+'  '+url.pathname+'  '+req.method);
 	fs.writeFile(fname+"."+t.getTime(),mydata , function(err) { if(err) { return console.log(err); } });
 	fs.writeFile(fname,mydata , function(err) { if(err) { return console.log(err); } }); // maintenant on ecrase l'ancien fichier hyp
         /* on verifie que tous les exemples sont bien GOLD avant de mettre l'etiquette DONE sur le fichier */
+	gold=false;
         for (var i=0, gold=true;(i<dajs.documents.length)&&(gold);i++)
 	 {
          //console.log('id='+dajs.documents[i].id);
-	 gold=false;
-	 for (var j=0;(j<dajs.documents[i].segments.length)&&(!gold);j++)
-	  if ((dajs.documents[i].segments[j].status_seg=='G')||(dajs.documents[i].segments[j].status_lab=='G')) gold=true;
+	//  for (var j=0;(j<dajs.documents[i].segments.length)&&(!gold);j++)
+	//   if ((dajs.documents[i].segments[j].status_seg=='G')||(dajs.documents[i].segments[j].status_lab=='G')) gold=true;
+	  if ((dajs.documents[i].status_seg=='G')||(dajs.documents[i].status_lab=='G')) gold=true;
 	 }
         if (gold)
 	 {

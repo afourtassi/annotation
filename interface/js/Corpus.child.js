@@ -85,7 +85,7 @@ function Corpus (cojs,xhttp,filehome)
 	// Renvoit le contenu du token spécifié
 	this.getTokenContent = function (document_index, token_index)
 	{
-        //console.log("POPO tokens.length="+this.data.documents[document_index].tokens.length+"  token_index="+token_index);
+        // console.log("POPO tokens.length="+this.data.documents[document_index].tokens.length+"  token_index="+token_index);
 		return this.data.documents[document_index].tokens[token_index].word;
 	};
 
@@ -162,6 +162,21 @@ function Corpus (cojs,xhttp,filehome)
 		return this.getDocument(document_index).segments[segment_index];
 	};
 
+	this.getTurnUtterance = function (document_index)
+	{
+		return this.getDocument(document_index).turn;
+	}
+
+	this.getTurnSpeaker = function (document_index)
+	{
+		return this.getDocument(document_index).subject;
+	}
+
+	this.getTurnLabel = function (document_index)
+	{
+		return this.getDocument(document_index).label;
+	}
+
 	this.getImage = function (document_index)
 	{
 		if (this.getDocument(document_index).image!=undefined)
@@ -214,9 +229,16 @@ function Corpus (cojs,xhttp,filehome)
 		return matching_links;
 	};
 
-	this.getSegmentsLabelsList = function ()
+	this.getLabelsListBySpeaker = function (speaker_type)
 	{
-		return this.data.header.labels_segment;
+		if (speaker_type == "CHI")
+			return this.data.header.labels_child;
+		else if (speaker_type == "FAT" || speaker_type == "MOT")
+			return this.data.header.labels_parent;
+		else{
+			console.error("Wrong Type: ", speaker_type);
+			return ["NULL"];
+		}
 	};
 
 	this.getLinksLabelsList = function ()

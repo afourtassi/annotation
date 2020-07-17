@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "without:sf5951",
+    "filename": "demo.json",
+    "labels_child": [
+      "child_act_1",
+      "child_act_2",
+      "child_act_3"
+    ],
+    "labels_parent": [
+      "parent_act_1",
+      "parent_act_2",
+      "parent_act_3"
+    ],
+    "timestamp": ""
+  },
+  "annotation": {
+    "name": "a",
+    "time_start": 1594965194390,
+    "time_end": 1594965279772
+  },
+  "documents": [
+    {
+      "id": "1",
+      "subject": "CHI",
+      "turn": "This is turn one, spoken by child",
+      "label": "child_act_2",
+      "status_seg": "G",
+      "status_lab": "G",
+      "timestamp": 1594965188508,
+      "author": "a"
+    },
+    {
+      "id": "2",
+      "subject": "FAT",
+      "turn": "This is turn two, spoken by father",
+      "label": "parent_act_2",
+      "status_seg": "G",
+      "status_lab": "G",
+      "timestamp": 1594965277274,
+      "author": "a"
+    },
+    {
+      "id": "3",
+      "subject": "MOT",
+      "turn": "This is turn three, spoken by mother",
+      "label": "parent_act_1",
+      "status_seg": "G",
+      "status_lab": "G"
+    }
+  ]
+}

@@ -7,6 +7,8 @@
 // Cette classe nécessite le passage d'un corpus chargé en paramètre, et une page HTML associée.
 // --------------------------------------------------------------------------------------
 
+// const { listenerCount } = require("process");
+
 var FREDoldsegment = null ;
 
 function ValidateList (corpus, links_mode)
@@ -342,8 +344,8 @@ function ValidateList (corpus, links_mode)
 	// Si on est en mode cible et que la phrase est dupliquée (plus d'une cible), il y aura plusieurs noeuds
 	this.getSentenceContentAsNodes = function (document_index)
 	{
-		var current_document = this.corpus.getDocument(document_index);
-		var nb_segments 	 = this.corpus.getNbSegments(document_index);
+		// var current_document = this.corpus.getDocument(document_index);
+		// var nb_segments 	 = this.corpus.getNbSegments(document_index);
 		
 		var target_indexes = [];
 		var links_targets  = [];
@@ -352,110 +354,84 @@ function ValidateList (corpus, links_mode)
 		var sentence_node = $("<div class=\"sentence_content\">");
 //console.log("ZOZO");
 
+		// var current_segment = this.corpus.getSegment(document_index, segment_index);
+		var current_segment = this.corpus.getDocument(document_index);
+		var current_turn_utterance = this.corpus.getTurnUtterance(document_index);
+		var current_speaker = this.corpus.getTurnSpeaker(document_index);
+		var current_label = this.corpus.getTurnLabel(document_index);
+
+		// Tag the speaker in a <div.
+		var current_speaker_container = $("<div class=\"speaker\">");
+		var current_speaker_label = $("<span class=\"speaker_label\">" + current_speaker + "</span>");
+		current_speaker_container.append(current_speaker_label);
+
+		// Chaque segment est englobé dans un <div>
+		var current_segment_container = $("<div class=\"segment\">");
+
+		// Ce div contient tout d'abord l'étiquette du segment
+		var current_segment_label = $("<span class=\"segment_label\">" + current_label + "</span>");
+		current_segment_container.append(current_segment_label);
+
+		// Si le segment a une valeur par défaut et est en hypothèse, on ne l'affiche pas (espace insécable afin d'aligner les segments)
+		// if (current_segment.label == this.empty_label
+		// &&  current_segment.status_lab != "G")
+		// 		current_segment_label.html("&emsp;");
+
+		// Puis on lui ajoute le segment en lui-meme
+		var current_segment_content = $("<span class=\"segment_content\">");
+		current_segment_container.append(current_segment_content);
+
+		// On ajoute AU CONTENEUR des classes relatives aux propriétés du segment courant
+		current_segment_container.addClass("seg_0");
+		// current_segment_container.addClass("priority_" + current_segment.priority);
 		
-		for (var segment_index = 0; segment_index < nb_segments; segment_index++)
-		{
-			var current_segment = this.corpus.getSegment(document_index, segment_index);
+		// Statut/présence de l'étiquette
+		if (current_label !== this.empty_label)
+			current_segment_container.addClass("labelled");
 
-			// Chaque segment est englobé dans un <div>
-			var current_segment_container = $("<div class=\"segment\">");
+		if (current_segment.status_lab == "G")
+			current_segment_container.addClass("label_gold");
+		if (current_segment.status_lab == "C")
+			current_segment_container.addClass("label_canceled");
 
-			// Ce div contient tout d'abord l'étiquette du segment
-			var current_segment_label = $("<span class=\"segment_label\">" + current_segment.label + "</span>");
-			current_segment_container.append(current_segment_label);
+		// Statut de la segmentation
+		if (current_segment.status_seg == "G")
+			current_segment_container.addClass("segment_gold");
+		if (current_segment.status_seg == "C")
+			current_segment_container.addClass("segment_canceled");
 
-			// Si le segment a une valeur par défaut et est en hypothèse, on ne l'affiche pas (espace insécable afin d'aligner les segments)
-			if (current_segment.label == this.empty_label
-			&&  current_segment.status_lab != "G")
-					current_segment_label.html("&emsp;");
+		// Cas d'une cible, HORS mode lien
+		// if (current_segment.target === 1)
+		// {
+		// 	current_segment_container.addClass("target");
+		// 	target_indexes.push(segment_index);
+		// }
 
-			// Puis on lui ajoute le segment en lui-meme
-			var current_segment_content = $("<span class=\"segment_content\">");
-			current_segment_container.append(current_segment_content);
+		// On ajoute le contenu textuel du segment courant
+		// var current_segment_content_text = this.getSegmentContentAsHTMLString(document_index, segment_index);
+		// if (segment_index !== nb_segments - 1)
+		// 	current_segment_content_text += " ";
 
-			// On ajoute AU CONTENEUR des classes relatives aux propriétés du segment courant
-			current_segment_container.addClass("seg_" + segment_index);
-			current_segment_container.addClass("priority_" + current_segment.priority);
-			
-			// Statut/présence de l'étiquette
-			if (current_segment.label !== this.empty_label)
-				current_segment_container.addClass("labelled");
+		current_segment_content.html(current_turn_utterance);
 
-			if (current_segment.status_lab == "G")
-				current_segment_container.addClass("label_gold");
-			if (current_segment.status_lab == "C")
-				current_segment_container.addClass("label_canceled");
-
-			// Statut de la segmentation
-			if (current_segment.status_seg == "G")
-				current_segment_container.addClass("segment_gold");
-			if (current_segment.status_seg == "C")
-				current_segment_container.addClass("segment_canceled");
-
-			// Cas d'une cible, HORS mode lien
-			if (current_segment.target === 1)
-			{
-				current_segment_container.addClass("target");
-				target_indexes.push(segment_index);
-			}
-
-			// Liens concernant ce segment + mode cible DANS le mode lien
-			var segment_is_linked = false;
-			for (var link_index in current_document.links)
-			{
-				var current_link = current_document.links[link_index];
-
-				// Origine ou destination de liens
-				if (current_link.orig === segment_index)
-				{
-					current_segment_container.addClass("origin_" + current_link.dest);
-					segment_is_linked = true;
-
-					if (current_link.target === 1)
-					{
-						links_targets.push(current_link);
-						current_segment_container.addClass("link_target");
-					}
-				}
-
-				if (current_link.dest === segment_index)
-				{
-					current_segment_container.addClass("destination_" + current_link.orig);
-					segment_is_linked = true;
-
-					if (current_link.target === 1)
-						current_segment_container.addClass("link_target");
-				}	
-			}
-
-			if (segment_is_linked)
-				current_segment_container.addClass("linked");
-
-			// On ajoute le contenu textuel du segment courant
-			var current_segment_content_text = this.getSegmentContentAsHTMLString(document_index, segment_index);
-			if (segment_index !== nb_segments - 1)
-				current_segment_content_text += " ";
-
-			current_segment_content.html(current_segment_content_text);
-
-			// Si on est en mode liens, on ajoute également l'espace pour afficher l'étiquette de liens
-			if (this.links_mode)
-			{	
-				var current_segment_link_label = $("<span class=\"segment_link_label\">&emsp;</span>");
-				current_segment_container.append(current_segment_link_label);
-			}
-
-			// Retour à la ligne indiqué
-			if (current_segment.newline === 1)
-			{
-				if (segment_index > 0)
-					sentence_node.append($("<br/>"));
-				sentence_node.append($("<span class=\"segment_newline\">" + this.segment_newline_string + "</span>"));
-			}
-
-			// On place le contenant (<div> avec étiquette + contenu textuel) dans le noeud parent
-			sentence_node.append(current_segment_container);
+		// Si on est en mode liens, on ajoute également l'espace pour afficher l'étiquette de liens
+		if (this.links_mode)
+		{	
+			var current_segment_link_label = $("<span class=\"segment_link_label\">&emsp;</span>");
+			current_segment_container.append(current_segment_link_label);
 		}
+
+		// Retour à la ligne indiqué
+		// if (current_segment.newline === 1)
+		// {
+		// 	if (segment_index > 0)
+		// 		sentence_node.append($("<br/>"));
+		// 	sentence_node.append($("<span class=\"segment_newline\">" + this.segment_newline_string + "</span>"));
+		// }
+
+		// On place le contenant (<div> avec étiquette + contenu textuel) dans le noeud parent
+		sentence_node.append(current_speaker_container);
+		sentence_node.append(current_segment_container);
 
 		// On crée un tableau de noeuds pour la meme phrase (à renvoyer)
 		var sentences = {
@@ -504,14 +480,16 @@ function ValidateList (corpus, links_mode)
 	this.getSentenceNodes = function (document_index)
 	{
 		var sentence_nodes   = [];
-		var current_document = this.corpus.getDocument(document_index);
+		// var current_document = this.corpus.getDocument(document_index);
 
 		// Pour chaque noeud de contenu (multiples si mode cible et cibles multiples), on duplique le document
 		var current_sentences_content = this.getSentenceContentAsNodes(document_index);
+		// STUB
 
 		for (var node_index in current_sentences_content.nodes)
 		{
 			var current_content_node = current_sentences_content.nodes[node_index];
+			// console.log(node_index, current_content_node);
 
 			// On crée un noeud parent pour chaque occurence du document
 			var current_sentence = $("<div class=\"document\">");
@@ -529,10 +507,10 @@ function ValidateList (corpus, links_mode)
 				current_sentence.addClass("no_target");
 
 			// Idem pour les liens cibles
-			if (current_sentences_content.nb_links_targets > 0)
-				current_sentence.addClass("has_link_target");
-			else
-				current_sentence.addClass("no_link_target");
+			// if (current_sentences_content.nb_links_targets > 0)
+			// 	current_sentence.addClass("has_link_target");
+			// else
+			// 	current_sentence.addClass("no_link_target");
 
 			// On y ajoute les boutons de controle (associés à l'occurence de la "phrase" courante)
 			var current_sentence_buttons = this.getSentenceButtonsAsNode(document_index);
@@ -564,10 +542,12 @@ function ValidateList (corpus, links_mode)
 
 			// On récupère les noeuds associés à chaque document
 			var current_sentence_nodes = this.getSentenceNodes(document_index);
+			// console.log(current_sentence_nodes)
+			this.documents.append(current_sentence_nodes)
 
 			// On les ajoute à la liste
-			for (var index in current_sentence_nodes)
-				this.documents.append(current_sentence_nodes[index]);
+			// for (var index in current_sentence_nodes)
+			// 	this.documents.append(this.corpus.getDocument[index]);
 		}
 	};
 
@@ -639,6 +619,12 @@ function ValidateList (corpus, links_mode)
 	this.getDocumentIndexFromSegmentNode = function (node)
 	{
 		return parseInt($(node).closest(".document")[0].className.match(/doc_[0-9]*/)[0].replace("doc_", ""));
+	};
+
+	// get the i-th turn from corpus
+	this.getTurnNode = function (document_index)
+	{
+		return this.corpus.getDocument(document_index);
 	};
 
 	// Renvoit une référence vers un document à partir d'un noeud
@@ -1066,7 +1052,7 @@ function ValidateList (corpus, links_mode)
 			// On signale la phrase cliquée comme phrase sélectionnée
 			if (document_index!=-1) this_validate_list.selected_sentence = document_index;
 			else this_validate_list.selected_sentence++;
-			//console.log("OOOO selected sentence="+this_validate_list.selected_sentence);
+			// console.log("OOOO selected sentence="+this_validate_list.selected_sentence);
 			this_validate_list.updateSelectedSentence();
 		});
 	};
@@ -1293,7 +1279,7 @@ function ValidateList (corpus, links_mode)
 	// Renvoit la liste des étiquettes du popup d'édition
 	this.getEditPopupLabelsList = function (document_index, segment)
 	{
-		var allowed_labels = this.corpus.getSegmentsLabelsList();
+		var allowed_labels = this.corpus.getLabelsListBySpeaker(segment.subject);
 
 		// On écrit une fonction pour ajouter un handler de clic sur les éléments de la liste
 		function handleClickOnListElement (list_element, label)
@@ -1395,7 +1381,7 @@ function ValidateList (corpus, links_mode)
 
 		// Ajout de token par la droite (si ce n'est pas le dernier segment)
 		var segment_document = this.getDocumentFromSegmentNode(segment_node);
-		if (! $(segment_node).closest(".segment").hasClass("seg_" + (segment_document.segments.length - 1)))
+		if (! $(segment_node).closest(".segment").hasClass("seg_" + 0))
 		{
 			var merge_right_button = $("<button id=\"merge_right_segment_button\" type=\"button\" title=\"" + _string("tooltips", "merge_right_segment", this.language) + "\">" + _string("buttons", "merge_right_segment", this.language) + "</button>");
 			
@@ -1421,7 +1407,8 @@ function ValidateList (corpus, links_mode)
 		$("#edit_popup").remove();
 
 		var document_index = this.getDocumentIndexFromSegmentNode(segment_node);
-		var segment 	   = this.getSegmentFromSegmentNode(segment_node);
+		// var segment 	   = this.getSegmentFromSegmentNode(segment_node);
+		var segment = this.getTurnNode(document_index);
 
 		// On crée un nouveau popup
 		var new_popup = $("<div class=\"popup\" id=\"edit_popup\">");
