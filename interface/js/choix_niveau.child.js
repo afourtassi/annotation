@@ -37,7 +37,7 @@ n_div.append(n_table);
 $('body').append(n_div);
 ////////
 // FIXME: I am using auto-login for easy debugging. REMOVE it in production.
-eventFire(document.getElementById('gologin'), 'click');
+// eventFire(document.getElementById('gologin'), 'click');
 
 xhttp.onreadystatechange = function()
  {

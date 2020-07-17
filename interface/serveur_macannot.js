@@ -122,5 +122,6 @@ console.log(req.url+'  '+url.pathname+'  '+req.method);
 }).listen(PORT, SERVEUR);
 
 console.log('Server '+SERVEUR+' listening on port: '+PORT);
+console.log('Try http://localhost:8888/child.html');
 })();
  

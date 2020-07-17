@@ -1,3 +1,43 @@
+# MACANNOT for CHILDES Corpora
+## Data Preparation
+
+Coming soon...
+
+Currently I include a  `demo.json` under `./data/`.
+
+## Setup a Local Server
+
+Sync dataset:
+```bash
+# run Makefile in ./tools/
+cd ./tools
+make
+cd ..
+# run update_list_file script
+./tools/update_list_file.sh ./data
+# now you should find 'list_file.json' under ./ and ./data/
+```
+Install npm modules:
+```bash
+# move to ./interface and install
+cd ./interface
+npm install
+cd ..
+# configure server address and port in ./interface/serveur_macannot.js
+# run server
+node ./interface/serveur_macannot.js
+```
+**To whom it may help**, If you can't  understanding all the French like me,  make sure the language option is set to `en` in `./interface/js/ValidateList.js`:
+
+```javascript
+this.language = "en";  // line 22
+```
+Visit the website at `localhost:8888/child.html`, then enjoy it!
+
+
+
+> Following is the original README, written in French.
+
 Interface d'annotation de corpus MACANNOT
 =========================================
 
