@@ -379,6 +379,10 @@ STRINGS.titles = {
 	// ----------------------------------------------------------------------------------
 	// OPTIONS POPUP
 	// ----------------------------------------------------------------------------------
+	annotation_title: {
+		"fr": "Vous annotez: ",
+		"en": "You are annotating: "
+	},
 
 	validation_options: {
 		"fr": "Validation",

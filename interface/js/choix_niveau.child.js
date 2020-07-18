@@ -72,6 +72,7 @@ xhttp.onreadystatechange = function()
     console.log("POPO"); console.log(corpus_test);
     validator = new ValidateList(corpus_test, /*true*/ false /* mode lien */); 
     validator.saveAuthorInLocalStorage(authorname);
+    $("text#annotation_title").text(_string("titles", "annotation_title", validator.language) + lfile.header.filename)
     }
    else
     {

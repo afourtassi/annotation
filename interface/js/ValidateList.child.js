@@ -21,7 +21,7 @@ function ValidateList (corpus, links_mode)
 	// Langue de l'interface
 	// Nativement, le français ("fr") et l'anglais ("en") sont disponibles
 	// Voir le fichier interface_strings.js à ce sujet
-	this.language = "en";
+	this.language = "fr";
 
 	// Noeuds principaux
 	this.main_node 		= $("#validator");
@@ -2074,6 +2074,7 @@ function ValidateList (corpus, links_mode)
 			target_mode_button.html(_string("buttons", "enter_target_mode", this.language));
 		}		
 
+		// FIXME: did not show sentence-by-sentence mode
 		// Bouton pour débuter ou quitter le mode de validation phrase par phrase
 		var validate_sentence_by_sentence_button = $("#validate_sentence_by_sentence_button");
 		if (this_validate_list.validate_sentence_by_sentence)

@@ -733,8 +733,16 @@ body {
 	box-shadow: 0 -1px 0 0 #57160F inset;
 }
 
+#display_options_popup_button {
+	float: left;
+}
+
 #undo_button {
 	float: right;
+}
+
+#annotation_title {
+	vertical-align: middle;
 }
 
 /************************************************************/
