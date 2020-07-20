@@ -5,46 +5,242 @@
     "labels_child": [
       "child_act_1",
       "child_act_2",
-      "child_act_3"
+      "child_act_3",
+      "NULL"
     ],
     "labels_parent": [
       "parent_act_1",
       "parent_act_2",
-      "parent_act_3"
+      "parent_act_3",
+      "NULL"
     ],
-    "timestamp": ""
+    "participants": [
+      {
+        "id": "CHI",
+        "name": "Grégoire",
+        "role": "Target_Child",
+        "language": "fra",
+        "age": "P3Y00M11D"
+      },
+      {
+        "id": "MOT",
+        "name": "Dominique",
+        "role": "Mother",
+        "language": "fra",
+        "sex": "female"
+      }
+    ]
   },
   "annotation": {
     "name": "a",
-    "time_start": 1594965194390,
-    "time_end": 1594965279772
+    "time_start": 1595216884963,
+    "time_end": 1595223401890
   },
   "documents": [
     {
-      "id": "1",
+      "type": "comment",
+      "annotable": false,
+      "utterance": "long, toyplay, TD"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "faut que je faisse du vélo ceci veut dire que GRE veut , a envie de faire du vélo , que ce n' est pas normal que MOT n' amène pas son vélo",
       "subject": "CHI",
-      "turn": "This is turn one, spoken by child",
-      "label": "child_act_2",
+      "id": "u0",
+      "label": "child_act_1",
       "status_seg": "G",
       "status_lab": "G",
-      "timestamp": 1594965188508,
+      "timestamp": 1595223395418,
       "author": "a"
     },
     {
-      "id": "2",
-      "subject": "FAT",
-      "turn": "This is turn two, spoken by father",
-      "label": "parent_act_2",
-      "status_seg": "G",
-      "status_lab": "G",
-      "timestamp": 1594965277274,
-      "author": "a"
+      "type": "comment",
+      "annotable": false,
+      "utterance": "12-MAY-1989"
     },
     {
-      "id": "3",
+      "type": "comment",
+      "annotable": false,
+      "utterance": "àtable , GRE est en bout de table"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "je préfère que je aille à coté de toi MOT",
+      "subject": "CHI",
+      "id": "u1",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "c'est Adrien qui l ouvert",
+      "subject": "CHI",
+      "id": "u2",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "je crois que c'est Adrien qui l'a ouvert à propos d'une porte",
+      "subject": "CHI",
+      "id": "u3",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "qui est ce qui a dessiné la tête du squelette",
       "subject": "MOT",
-      "turn": "This is turn three, spoken by mother",
-      "label": "parent_act_1",
+      "id": "u4",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "je crois que c'est des gens plus tard",
+      "subject": "CHI",
+      "id": "u5",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "je crois que t'es une dame MOT",
+      "subject": "CHI",
+      "id": "u6",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "je crois que t'es une maman nombreux <je crois que> notés à la suite",
+      "subject": "CHI",
+      "id": "u7",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "comment",
+      "annotable": false,
+      "utterance": "24-MAY-1989"
+    },
+    {
+      "type": "comment",
+      "annotable": false,
+      "utterance": "à table; Grégoire se lance dans une énumération de tous les mots grossiers qu'il connaît"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "putain . bordel de merde . chier . couilles xxx GRE attend visiblement une réaction",
+      "subject": "CHI",
+      "id": "u8",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "Grégoire . on ne dit pas de mots grossiers à table",
+      "subject": "MOT",
+      "id": "u9",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "tu sais que je l'ai interdit à toi et à tes frères",
+      "subject": "MOT",
+      "id": "u10",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "ne recommences pas sinon tu vas être puni un peu plus tard",
+      "subject": "MOT",
+      "id": "u11",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "putain . bordel de merde . chier . couilles xxx",
+      "subject": "CHI",
+      "id": "u12",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "Grégoire je te préviens si tu recommences à dire des mots grossiers à table devant tes parents . tu reçois une claque et tu quittes la table plus tard",
+      "subject": "MOT",
+      "id": "u13",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "putain . bordel de merde . chier . couilles xxx la mère de Grégoire se lève , lui donne une claque et lui fait quitter la table; il revient avant la fin du repas et mange en silence; quand tout le monde a terminé il reprend la parole",
+      "subject": "CHI",
+      "id": "u14",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "mais . maman . si je veux . les gros mots . je peux toujours les dire dans ma tête",
+      "subject": "CHI",
+      "id": "u15",
+      "label": "NULL",
+      "status_seg": "G",
+      "status_lab": "G"
+    },
+    {
+      "type": "comment",
+      "annotable": false,
+      "utterance": "28-MAY-1989"
+    },
+    {
+      "type": "comment",
+      "annotable": false,
+      "utterance": "unlivre est resté sur le balcon"
+    },
+    {
+      "type": "utterance",
+      "annotable": true,
+      "turn": "maman . si tu le laisses ici eh ben le vent va le faire tomber",
+      "subject": "CHI",
+      "id": "u16",
+      "label": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     }

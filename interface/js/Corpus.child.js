@@ -162,6 +162,20 @@ function Corpus (cojs,xhttp,filehome)
 		return this.getDocument(document_index).segments[segment_index];
 	};
 
+	this.isComment = function (document_index)
+	{
+		return this.getDocument(document_index).type == "comment" || this.getDocument(document_index).type == "gem";
+	}
+
+	this.getComment = function (document_index)
+	{
+		if (this.getDocument(document_index).type == "comment")
+			return this.getDocument(document_index).explanation + ": " + this.getDocument(document_index).turn;
+		else if (this.getDocument(document_index).type == "gem")
+			return "[" + this.getDocument(document_index).explanation + "]: " + this.getDocument(document_index).turn;
+		else return "NULL";
+	}
+
 	this.getTurnUtterance = function (document_index)
 	{
 		return this.getDocument(document_index).turn;
@@ -170,6 +184,11 @@ function Corpus (cojs,xhttp,filehome)
 	this.getTurnSpeaker = function (document_index)
 	{
 		return this.getDocument(document_index).subject;
+	}
+
+	this.getTurnExplanation = function (document_index)
+	{
+		return this.getDocument(document_index).explanation;
 	}
 
 	this.getTurnLabel = function (document_index)

@@ -202,6 +202,12 @@ body {
 /* Segments (conteneurs)
 /************************************************************/
 
+.turn_explanation_content {
+	text-align: right;
+	background-color: #c0c0c0;
+	font-size: x-small;
+}
+
 /* Style général d'un segment */
 
 .segment {

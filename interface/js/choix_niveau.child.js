@@ -84,7 +84,8 @@ xhttp.onreadystatechange = function()
     n_cont2=$('<div>').attr('id','choixlu');
     n_cont2.append($('<button>').text("BACK").click(function (event)
      {
-     if ((level>0)&&(tlevel[level-1]!=undefined)) { xhttp.open("GET", tlevel[level-1]); xhttp.send(); level--; }
+       console.log(level, tlevel);
+     if ((level>0)&&(tlevel[level-2]!=undefined)) { xhttp.open("GET", tlevel[level-2]); xhttp.send(); level -= 2; }
      } ));
 /*
     n_cont2.append($('<button>').text("OUTPUT CORPUS").css("position","fixed").css("right","6%").click(function (event) 
@@ -110,7 +111,8 @@ xhttp.onreadystatechange = function()
        {
        var cell = $('<td>') , moy=(lfile.data[i].nbdone*100)/lfile.data[i].nb;
        if (lfile.data[i].prec==undefined)
-        cell.append($('<div>').append($('<h3>').text(lfile.data[i].name))).append($('<div>').text(''+lfile.data[i].nbdone+'/'+lfile.data[i].nb+' ('+moy.toFixed(1)+'%)')).append($('<div>').text('precision: -'));
+      //  cell.append($('<div>').append($('<h3>').text(lfile.data[i].name))).append($('<div>').text(''+lfile.data[i].nbdone+'/'+lfile.data[i].nb+' ('+moy.toFixed(1)+'%)')).append($('<div>').text('precision: -'));
+       cell.append($('<div>').append($('<h3>').text(lfile.data[i].name))).append($('<div>').text(''+lfile.data[i].nbdone+'/'+lfile.data[i].nb+' ('+moy.toFixed(1)+'%)'));
        else
         cell.append($('<div>').append($('<h3>').text(lfile.data[i].name))).append($('<div>').text(''+lfile.data[i].nbdone+'/'+lfile.data[i].nb+' ('+moy.toFixed(1)+'%)')).append($('<div>').text('precision: '+lfile.data[i].prec+'%'));
        cell.attr('id','c'+i).attr('class','choix').css('background-color', Tcoul[Math.floor(moy/10)]);

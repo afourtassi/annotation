@@ -1,9 +1,32 @@
 # MACANNOT for CHILDES Corpora
 ## Data Preparation
 
-Coming soon...
+By default, I include a  `demo.json` under `./data/`.
 
-Currently I include a  `demo.json` under `./data/`.
+To download and process corpus, just run the command:
+```bash
+python3 preprocess/downloader.py
+```
+
+This will take a few minutes. Then you should be able to find the processed JSON files under `./data/`, structured like:
+
+```
+|- data
+    |- Champaud
+        |- 010906x.json
+	        ...
+    |- Geneva
+    |- Hammelrath
+    |- Leveille
+    |- MTLN
+    |- Palasis
+    |- Pauline
+    |- VionColas
+    |- York
+```
+
+
+
 
 ## Setup a Local Server
 
@@ -15,6 +38,8 @@ make
 cd ..
 # run update_list_file script
 ./tools/update_list_file.sh ./data
+# The output should be like:
+# 'NB=1464  NBDONE=1'
 # now you should find 'list_file.json' under ./ and ./data/
 ```
 Install npm modules:

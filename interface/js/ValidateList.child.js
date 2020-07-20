@@ -354,84 +354,103 @@ function ValidateList (corpus, links_mode)
 		var sentence_node = $("<div class=\"sentence_content\">");
 //console.log("ZOZO");
 
-		// var current_segment = this.corpus.getSegment(document_index, segment_index);
-		var current_segment = this.corpus.getDocument(document_index);
-		var current_turn_utterance = this.corpus.getTurnUtterance(document_index);
-		var current_speaker = this.corpus.getTurnSpeaker(document_index);
-		var current_label = this.corpus.getTurnLabel(document_index);
-
 		// Tag the speaker in a <div.
 		var current_speaker_container = $("<div class=\"speaker\">");
-		var current_speaker_label = $("<span class=\"speaker_label\">" + current_speaker + "</span>");
-		current_speaker_container.append(current_speaker_label);
-
+		var current_explanation_container = $("<div class=\"turn_explanation\">");
 		// Chaque segment est englobé dans un <div>
 		var current_segment_container = $("<div class=\"segment\">");
 
-		// Ce div contient tout d'abord l'étiquette du segment
-		var current_segment_label = $("<span class=\"segment_label\">" + current_label + "</span>");
-		current_segment_container.append(current_segment_label);
+		// var current_segment = this.corpus.getSegment(document_index, segment_index);
+		var current_segment = this.corpus.getDocument(document_index);
+		if (!this.corpus.isComment(document_index)){
+			var current_turn_utterance = this.corpus.getTurnUtterance(document_index);
+			var current_speaker = this.corpus.getTurnSpeaker(document_index);
+			var current_label = this.corpus.getTurnLabel(document_index);
 
-		// Si le segment a une valeur par défaut et est en hypothèse, on ne l'affiche pas (espace insécable afin d'aligner les segments)
-		// if (current_segment.label == this.empty_label
-		// &&  current_segment.status_lab != "G")
-		// 		current_segment_label.html("&emsp;");
+			var current_speaker_label = $("<span class=\"speaker_label\">" + current_speaker + "</span>");
+			current_speaker_container.append(current_speaker_label);
 
-		// Puis on lui ajoute le segment en lui-meme
-		var current_segment_content = $("<span class=\"segment_content\">");
-		current_segment_container.append(current_segment_content);
+			var current_turn_explanation = $("<span class=\"turn_explanation_content\">" + this.corpus.getTurnExplanation(document_index) + "</span>");
+			current_explanation_container.append(current_turn_explanation);
 
-		// On ajoute AU CONTENEUR des classes relatives aux propriétés du segment courant
-		current_segment_container.addClass("seg_0");
-		// current_segment_container.addClass("priority_" + current_segment.priority);
-		
-		// Statut/présence de l'étiquette
-		if (current_label !== this.empty_label)
-			current_segment_container.addClass("labelled");
 
-		if (current_segment.status_lab == "G")
-			current_segment_container.addClass("label_gold");
-		if (current_segment.status_lab == "C")
-			current_segment_container.addClass("label_canceled");
+			// Ce div contient tout d'abord l'étiquette du segment
+			var current_segment_label = $("<span class=\"segment_label\">" + current_label + "</span>");
+			current_segment_container.append(current_segment_label);
 
-		// Statut de la segmentation
-		if (current_segment.status_seg == "G")
-			current_segment_container.addClass("segment_gold");
-		if (current_segment.status_seg == "C")
-			current_segment_container.addClass("segment_canceled");
+			// Si le segment a une valeur par défaut et est en hypothèse, on ne l'affiche pas (espace insécable afin d'aligner les segments)
+			// if (current_segment.label == this.empty_label
+			// &&  current_segment.status_lab != "G")
+			// 		current_segment_label.html("&emsp;");
 
-		// Cas d'une cible, HORS mode lien
-		// if (current_segment.target === 1)
-		// {
-		// 	current_segment_container.addClass("target");
-		// 	target_indexes.push(segment_index);
-		// }
+			// Puis on lui ajoute le segment en lui-meme
+			var current_segment_content = $("<span class=\"segment_content\">");
+			current_segment_container.append(current_segment_content);
 
-		// On ajoute le contenu textuel du segment courant
-		// var current_segment_content_text = this.getSegmentContentAsHTMLString(document_index, segment_index);
-		// if (segment_index !== nb_segments - 1)
-		// 	current_segment_content_text += " ";
+			// On ajoute AU CONTENEUR des classes relatives aux propriétés du segment courant
+			current_segment_container.addClass("seg_0");
+			// current_segment_container.addClass("priority_" + current_segment.priority);
+			
+			// Statut/présence de l'étiquette
+			if (current_label !== this.empty_label)
+				current_segment_container.addClass("labelled");
 
-		current_segment_content.html(current_turn_utterance);
+			if (current_segment.status_lab == "G")
+				current_segment_container.addClass("label_gold");
+			if (current_segment.status_lab == "C")
+				current_segment_container.addClass("label_canceled");
 
-		// Si on est en mode liens, on ajoute également l'espace pour afficher l'étiquette de liens
-		if (this.links_mode)
-		{	
-			var current_segment_link_label = $("<span class=\"segment_link_label\">&emsp;</span>");
-			current_segment_container.append(current_segment_link_label);
+			// Statut de la segmentation
+			if (current_segment.status_seg == "G")
+				current_segment_container.addClass("segment_gold");
+			if (current_segment.status_seg == "C")
+				current_segment_container.addClass("segment_canceled");
+
+			// Cas d'une cible, HORS mode lien
+			// if (current_segment.target === 1)
+			// {
+			// 	current_segment_container.addClass("target");
+			// 	target_indexes.push(segment_index);
+			// }
+
+			// On ajoute le contenu textuel du segment courant
+			// var current_segment_content_text = this.getSegmentContentAsHTMLString(document_index, segment_index);
+			// if (segment_index !== nb_segments - 1)
+			// 	current_segment_content_text += " ";
+
+			current_segment_content.html(current_turn_utterance);
+
+			// Si on est en mode liens, on ajoute également l'espace pour afficher l'étiquette de liens
+			if (this.links_mode)
+			{	
+				var current_segment_link_label = $("<span class=\"segment_link_label\">&emsp;</span>");
+				current_segment_container.append(current_segment_link_label);
+			}
+
+			// Retour à la ligne indiqué
+			// if (current_segment.newline === 1)
+			// {
+			// 	if (segment_index > 0)
+			// 		sentence_node.append($("<br/>"));
+			// 	sentence_node.append($("<span class=\"segment_newline\">" + this.segment_newline_string + "</span>"));
+			// }
+
+		} else {
+			// Tag the speaker in a <div>.
+			var current_speaker_label = $("<span class=\"speaker_label\">" + this.corpus.getDocument(document_index).type + "</span>");
+			current_speaker_container.append(current_speaker_label);
+			var current_turn_utterance = this.corpus.getComment(document_index);
+
+			// Puis on lui ajoute le segment en lui-meme
+			var current_segment_content = $("<span class=\"segment_content\">");
+			current_segment_container.append(current_segment_content);
+			current_segment_content.html(current_turn_utterance);
 		}
-
-		// Retour à la ligne indiqué
-		// if (current_segment.newline === 1)
-		// {
-		// 	if (segment_index > 0)
-		// 		sentence_node.append($("<br/>"));
-		// 	sentence_node.append($("<span class=\"segment_newline\">" + this.segment_newline_string + "</span>"));
-		// }
 
 		// On place le contenant (<div> avec étiquette + contenu textuel) dans le noeud parent
 		sentence_node.append(current_speaker_container);
 		sentence_node.append(current_segment_container);
+		sentence_node.append(current_explanation_container);
 
 		// On crée un tableau de noeuds pour la meme phrase (à renvoyer)
 		var sentences = {
@@ -439,7 +458,6 @@ function ValidateList (corpus, links_mode)
 			"nb_links_targets": links_targets.length,
 			"nodes": []
 		}
-
 		// On met à jour la liste des noeuds (cas du mode cible...)
 		sentences.nodes = this.updateSentenceNodeForTargetMode(sentence_node, target_indexes, links_targets);
 
@@ -453,6 +471,7 @@ function ValidateList (corpus, links_mode)
 		// On crée le noeud contenant les boutons associés à une "phrase"
 		var buttons_group = $("<div class=\"sentence_buttons\">");
 
+		if (this.corpus.isComment(document_index)) return buttons_group;
 		// On y ajoute un bouton de validation
 		var validate_button = $("<button class=\"validate_sentence_button\" type=\"button\">" + _string("buttons", "validate_sentence", this.language) + "</button>");
 		validate_button.click(function (event) {
@@ -2828,7 +2847,9 @@ function ValidateList (corpus, links_mode)
 		if (document_index >= 0)
 		{
 			console.log("Document " + document_index + " mis à jour");
-			this.updateSentence(document_index);
+			// FIXME: should update only current sentence.
+			// this.updateSentence(document_index);
+			this.updateSentencesList();
 		}
 		// Sinon, on réaffiche toute la liste à partir du corpus
 		else
