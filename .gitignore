@@ -3,6 +3,5 @@ corpus/
 interface/package-lock.json
 tmp.listfile
 list_file.json
-data/
 corpus_parser/
 **/__pycache__/**

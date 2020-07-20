@@ -1,0 +1,1087 @@
+{
+    "header": {
+        "id": "without:sf5951",
+        "filename": "example1.json",
+        "labels_child": [
+            "child_act_1",
+            "child_act_2",
+            "child_act_3",
+            "NULL"
+        ],
+        "labels_parent": [
+            "parent_act_1",
+            "parent_act_2",
+            "parent_act_3",
+            "NULL"
+        ],
+        "participants": [
+            {
+                "id": "CHI",
+                "name": "Cl\u00e9mence",
+                "role": "Target_Child",
+                "language": "fra",
+                "age": "P9Y"
+            }
+        ]
+    },
+    "annotation": {},
+    "documents": [
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "un singe et un lion",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": "cross, pictures, TD",
+            "explanation": "Types"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois , un lion , qui avait un singe sur son dos .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u0",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "le singe sauta sur une branche ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u1",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et puis apr\u00e8s , il lui fait une grimace .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u2",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "s'assoit par terre , et il mange une banane .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u3",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "courra apr\u00e8s un oiseau ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u4",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et i joua avec un ballon ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u5",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et apr\u00e8s , il arracha une pomme de l'arbre ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u6",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et le lion , il mangea une gazelle .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u7",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "un homme et un adolescent",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "alors un petit gar\u00e7on , qui alla acheter des cerfs .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u8",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "apr\u00e8s il pleura ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u9",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il joua au ballon ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u10",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il alla se baigner ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u11",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et se reposa ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u12",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "apr\u00e8s i s'fait bronzer au soleil ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u13",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i va au man\u00e8ge ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u14",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i prend sa douche ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u15",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et apr\u00e8s il appelle le petit gar\u00e7on .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u16",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "une poule et des poussins",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois une poule , avec tous ses poussins .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u17",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "la poule mangea ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u18",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle courra ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u19",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle \u00e9tait dans le poulailler ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u20",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle commen\u00e7a \u00e0 voler ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u21",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle criait ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u22",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle est mont\u00e9e sur l'arbre ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u23",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et apr\u00e8s , elle voit ses petits , qui s'envolent .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u24",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "un homme et une femme",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois , quelqu'un qui \u00e9tait assis sur canap\u00e9 ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u25",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "la femme de m\u00e9nage , elle nettoya ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u26",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle faisa la cuisine ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u27",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle se d\u00e9shabilla ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u28",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle se maquilla ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u29",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle s'assoit ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u30",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis , elle tapa \u00e0 la machine .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u31",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis apr\u00e8s , elle alla faire les courses .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u32",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "une femme et une fillette",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois une maman qui jouait avec sa petite fille , aux dames .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u33",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis apr\u00e8s elle tricota ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u34",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis elle alla au jardin ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u35",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle s'asseya et elle \u00e9couta de la musique ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u36",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle fit la vaiselle ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u37",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle monte dans une barque ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u38",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "elle cueille des fleurs ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u39",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis apr\u00e8s , ya la petite fille qui remplit la bouteille d'eau .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u40",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "un chat et un \u00e2ne",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois , un \u00e2ne , qui rencontra un chat ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u41",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis , l'\u00e2ne , mangea de l'herbe ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u42",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "apr\u00e8s il cria ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u43",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis apr\u00e8s ya eu plein de valises sur lui ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u44",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il alla boire ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u45",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "se coucha ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u46",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il voit un papillon ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u47",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "bon il voit des abeilles .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u48",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "un adolescent et un gar\u00e7onnet",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il \u00e9tait une fois un papa avec son enfant , qui faisaient du v\u00e9lo ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u49",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "puis apr\u00e8s le papa i monta dans sa chambre ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u50",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i peigna sa chambre ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u51",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i mangea ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u52",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "t\u00e9l\u00e9phona ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u53",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i se met \u00e0 lire ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u54",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "apr\u00e8s i fait du piano ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u55",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUm",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et l\u00e0 i s'assoit ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u56",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8m",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "une tortue et un crocodile",
+            "explanation": "lazy-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "c'est un crocodile et une tortue ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u57",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V1c",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "et puis le crocodile il crie ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u58",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i crie ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u59",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "l\u00e0 i part , i glissa ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u60",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "il voit un poisson , qui est hors de l'eau ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u61",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "apr\u00e8s i remonte ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u62",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "i avance dans une tente ...",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u63",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "VUc",
+            "explanation": "end-gem"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "begin-gem"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "xxx champignon .",
+            "explanation": "",
+            "subject": "CHI",
+            "id": "u64",
+            "label": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "gem",
+            "annotable": false,
+            "turn": "V8c",
+            "explanation": "end-gem"
+        }
+    ]
+}
