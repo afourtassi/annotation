@@ -6,7 +6,8 @@ var http = require('http'), fs = require('fs'), mime = require('mime'), url_util
 //Lets define a server and a port we want to listen to
 //const SERVEUR='127.0.0.1';
 const SERVEUR='0.0.0.0';
-const PORT=8888;
+// const PORT=8888;
+const PORT=process.env.PORT || 8888;
 
 const CHDIRE_INTE='interface';
 const CHDIRE_TOOL='tools';
