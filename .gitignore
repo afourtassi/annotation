@@ -5,3 +5,4 @@ tmp.listfile
 list_file.json
 corpus_parser/
 **/__pycache__/**
+node_modules/

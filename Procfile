@@ -1,1 +1,1 @@
-web: node interface/serveur_macannot.js
+web: node serveur_macannot.js

@@ -9,7 +9,7 @@ const SERVEUR='0.0.0.0';
 // const PORT=8888;
 const PORT=process.env.PORT || 8888;
 
-const CHDIRE_INTE='interface';
+const CHDIRE_INTE='./';
 const CHDIRE_TOOL='tools';
 const CHDIRE_DATA='data';
 

@@ -1,0 +1,16 @@
+{
+  "name": "heroku-annotation",
+  "version": "1.0.0",
+  "description": "By default, I include a  `demo.json` under `./data/`.",
+  "main": "serveur_macannot.js",
+  "dependencies": {
+    "mime": "^1.6.0",
+    "node-gyp": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
