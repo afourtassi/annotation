@@ -120,9 +120,9 @@ xhttp.onreadystatechange = function()
         {
         $(this).css('background-color','blue');
         var i=$(this).attr('id').split('c')[1];
-        console.log('file='+lfile.data[i].json);
+        console.log('file='+lfile.data[i].json+" annotator="+authorname);
         level=lfile.level; tlevel[level]=lfile.data[i].json;
-        xhttp.open("GET", lfile.data[i].json, true);
+        xhttp.open("GET", "annotation?id="+authorname+"&path="+lfile.data[i].json, true);
         xhttp.send();
         });
        cell.mouseover(function(event)
