@@ -2,13 +2,13 @@
   "header": {
     "id": "without:sf5951",
     "filename": "example1.json",
-    "labels_child": [
+    "labels_1": [
       "child_act_1",
       "child_act_2",
       "child_act_3",
       "NULL"
     ],
-    "labels_parent": [
+    "labels_2": [
       "parent_act_1",
       "parent_act_2",
       "parent_act_3",
@@ -55,7 +55,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u0",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G",
       "timestamp": 1596095365665,
@@ -80,7 +81,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u1",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -91,7 +93,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u2",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -102,7 +105,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u3",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -113,7 +117,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u4",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -124,7 +129,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u5",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -135,7 +141,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u6",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -158,7 +165,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u7",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -187,7 +195,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u8",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -210,7 +219,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u9",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -221,7 +231,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u10",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -232,7 +243,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u11",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -243,7 +255,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u12",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -254,7 +267,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u13",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -265,7 +279,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u14",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -276,7 +291,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u15",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -299,7 +315,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u16",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -328,7 +345,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u17",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -351,7 +369,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u18",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -362,7 +381,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u19",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -373,7 +393,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u20",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -384,7 +405,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u21",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -395,7 +417,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u22",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -406,7 +429,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u23",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -429,7 +453,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u24",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -458,7 +483,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u25",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -481,7 +507,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u26",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -492,7 +519,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u27",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -503,7 +531,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u28",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -514,7 +543,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u29",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -525,7 +555,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u30",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -536,7 +567,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u31",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -559,7 +591,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u32",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -588,7 +621,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u33",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -611,7 +645,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u34",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -622,7 +657,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u35",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -633,7 +669,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u36",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -644,7 +681,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u37",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -655,7 +693,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u38",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -666,7 +705,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u39",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -689,7 +729,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u40",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -718,7 +759,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u41",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -741,7 +783,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u42",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -752,7 +795,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u43",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -763,7 +807,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u44",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -774,7 +819,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u45",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -785,7 +831,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u46",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -796,7 +843,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u47",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -819,7 +867,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u48",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -848,7 +897,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u49",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -871,7 +921,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u50",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -882,7 +933,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u51",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -893,7 +945,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u52",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -904,7 +957,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u53",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -915,7 +969,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u54",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -926,7 +981,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u55",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -949,7 +1005,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u56",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -978,7 +1035,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u57",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1001,7 +1059,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u58",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1012,7 +1071,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u59",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1023,7 +1083,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u60",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1034,7 +1095,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u61",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1045,7 +1107,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u62",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1056,7 +1119,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u63",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },
@@ -1079,7 +1143,8 @@
       "explanation": "",
       "subject": "CHI",
       "id": "u64",
-      "label": "NULL",
+      "label_1": "NULL",
+      "label_2": "NULL",
       "status_seg": "G",
       "status_lab": "G"
     },

@@ -191,9 +191,14 @@ function Corpus (cojs,xhttp,filehome)
 		return this.getDocument(document_index).explanation;
 	}
 
-	this.getTurnLabel = function (document_index)
+	this.getTurnLabel1 = function (document_index)
 	{
-		return this.getDocument(document_index).label;
+		return this.getDocument(document_index).label_1;
+	}
+
+	this.getTurnLabel2 = function (document_index)
+	{
+		return this.getDocument(document_index).label_2;
 	}
 
 	this.getImage = function (document_index)
@@ -256,6 +261,18 @@ function Corpus (cojs,xhttp,filehome)
 			return this.data.header.labels_parent;
 		else{
 			console.error("Wrong Type: ", speaker_type);
+			return ["NULL"];
+		}
+	};
+
+	this.getLabelsListByType = function (list_index)
+	{
+		if (list_index == 1)
+			return this.data.header.labels_1;
+		else if (list_index == 2)
+			return this.data.header.labels_2;
+		else{
+			console.error("Wrong List Type: ", list_index);
 			return ["NULL"];
 		}
 	};

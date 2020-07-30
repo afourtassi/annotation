@@ -161,6 +161,10 @@ body {
 	transition: 40ms ease-in-out;
 }
 
+.validate_sentence_button{
+	margin: 3px;
+}
+
 .sentence_buttons > button.validate_sentence_button {
 	background-color: #6C8B34;
 	border: 1px solid #536A28;

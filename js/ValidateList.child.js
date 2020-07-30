@@ -365,7 +365,7 @@ function ValidateList (corpus, links_mode)
 		if (!this.corpus.isComment(document_index)){
 			var current_turn_utterance = this.corpus.getTurnUtterance(document_index);
 			var current_speaker = this.corpus.getTurnSpeaker(document_index);
-			var current_label = this.corpus.getTurnLabel(document_index);
+			var current_label = this.corpus.getTurnLabel1(document_index);
 
 			var current_speaker_label = $("<span class=\"speaker_label\">" + current_speaker + "</span>");
 			current_speaker_container.append(current_speaker_label);
@@ -375,8 +375,9 @@ function ValidateList (corpus, links_mode)
 
 
 			// Ce div contient tout d'abord l'étiquette du segment
-			var current_segment_label = $("<span class=\"segment_label\">" + current_label + "</span>");
-			current_segment_container.append(current_segment_label);
+			// TODO: update labels
+			// var current_segment_label = $("<span class=\"segment_label\">" + current_label + "</span>");
+			// current_segment_container.append(current_segment_label);
 
 			// Si le segment a une valeur par défaut et est en hypothèse, on ne l'affiche pas (espace insécable afin d'aligner les segments)
 			// if (current_segment.label == this.empty_label
@@ -492,13 +493,25 @@ function ValidateList (corpus, links_mode)
 		// });
 		// buttons_group.append(cancel_button);
 
-		// var validate_button = $("<button class=\"validate_sentence_button\" type=\"button\">" + _string("buttons", "validate_sentence", this.language) + "</button>");
-		// validate_button.click(function (event) {
-		// 	// var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
-		// 	var segment_node = 
-		// 	this_validate_list.openEditPopup(segment_node);
-		// });
-		// buttons_group.append(validate_button);
+
+		var button_box = $("<div>")
+		var current_label_1 = this.corpus.getTurnLabel1(document_index);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1>" + current_label_1 + "</button> </div>");
+		validate_button.click(function (event) {
+			var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
+			this_validate_list.openEditPopup(segment_node, 1);
+		});
+		button_box.append(validate_button);
+		// button_box.append($("<br>"));
+		var current_label_2 = this.corpus.getTurnLabel2(document_index);
+		var validate_button = $("<div > <button class=\"validate_sentence_button\" type=\"button\", id=2>" + current_label_2 + "</button> </div>");
+		validate_button.click(function (event) {
+			var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
+			this_validate_list.openEditPopup(segment_node, 2);
+		});
+		button_box.append(validate_button);
+
+		buttons_group.append(button_box)
 	
 		return buttons_group;
 	};
@@ -540,8 +553,10 @@ function ValidateList (corpus, links_mode)
 			// 	current_sentence.addClass("no_link_target");
 
 			// On y ajoute les boutons de controle (associés à l'occurence de la "phrase" courante)
-			var current_sentence_buttons = this.getSentenceButtonsAsNode(document_index);
-			current_sentence.append(current_sentence_buttons);
+			if (!this.corpus.isComment(document_index)){
+				var current_sentence_buttons = this.getSentenceButtonsAsNode(document_index);
+				current_sentence.append(current_sentence_buttons);
+			}
 
 			// On lui ajoute ensuite le contenu de l'occurence de la "phrase" courante
 			current_sentence.append(current_content_node);
@@ -1304,9 +1319,10 @@ function ValidateList (corpus, links_mode)
 	// --------------------------------------------------------------------------------------
 
 	// Renvoit la liste des étiquettes du popup d'édition
-	this.getEditPopupLabelsList = function (document_index, segment)
+	this.getEditPopupLabelsList = function (document_index, segment, list_index)
 	{
-		var allowed_labels = this.corpus.getLabelsListBySpeaker(segment.subject);
+		// var allowed_labels = this.corpus.getLabelsListBySpeaker(segment.subject);
+		var allowed_labels = this.corpus.getLabelsListByType(list_index);
 
 		// On écrit une fonction pour ajouter un handler de clic sur les éléments de la liste
 		function handleClickOnListElement (list_element, label)
@@ -1314,7 +1330,9 @@ function ValidateList (corpus, links_mode)
 			list_element.click(function (event) {
 				this_validate_list.apply(function () {
 					// On met à jour les données du corpus
-					segment.label 	   = label;
+					// TODO: add label_2
+					if (list_index == 1) segment.label_1	= label;
+					if (list_index == 2) segment.label_2	= label;
 					segment.timestamp  = Date.now();
 					segment.status_lab = "G";
 					segment.status_seg = "G"; /* maintenant on valide la seg des qu'on valide le label */
@@ -1427,7 +1445,7 @@ function ValidateList (corpus, links_mode)
 	};
 
 	// Crée et renvoit le popup d'édition
-	this.createNewEditPopup = function (segment_node)
+	this.createNewEditPopup = function (segment_node, list_index)
 	{
 		// Si un popup d'id edit_popup existe, on le supprime
 		$("#edit_popup").remove();
@@ -1440,7 +1458,7 @@ function ValidateList (corpus, links_mode)
 		var new_popup = $("<div class=\"popup\" id=\"edit_popup\">");
 
 		// On récupère la liste des étiquettes et l'ajoute au popup
-		var labels_list = this.getEditPopupLabelsList(document_index, segment);
+		var labels_list = this.getEditPopupLabelsList(document_index, segment, list_index);
 		new_popup.append(labels_list);
 
 		// On récupère les boutons du popup
@@ -1452,12 +1470,12 @@ function ValidateList (corpus, links_mode)
 	};
 
 	// Crée et affiche le popup d'édition
-	this.openEditPopup = function (segment_node, x, y)
+	this.openEditPopup = function (segment_node, x, y, list_index)
 	{
         console.log("openEditPopup");
 
 		// On crée un nouveau popup
-		var new_popup = this.createNewEditPopup(segment_node);
+		var new_popup = this.createNewEditPopup(segment_node, list_index);
 
 		// On le positionne
 		var windows_width = $(window).width();
@@ -1881,12 +1899,12 @@ function ValidateList (corpus, links_mode)
 	// --------------------------------------------------------------------------------------
 
 	// Ouvre un menu popup lié à un segment (suivant le mode)
-	this.openPopup = function (segment_node, x, y)
+	this.openPopup = function (segment_node, x, y, list_index)
 	{
 		if (this.links_mode)
 			this.openLinksPopup(segment_node, x, y);
 		else
-			this.openEditPopup(segment_node, x, y);
+			this.openEditPopup(segment_node, x, y, list_index);
 
 		// On met en avant quel segment est la cible du popup
 		$(segment_node).closest(".segment").addClass("popup_clicked_segment");
@@ -1912,16 +1930,13 @@ function ValidateList (corpus, links_mode)
 
 			// Si on est en mode cible, on ne peut éditer que les cibles affichées
 			// Ceci n'est cependant pas vrai en mode édition
-			if (this_validate_list.target_mode
-			&& segment_node.closest(".editable").length === 0)
+			if (this_validate_list.target_mode && segment_node.closest(".editable").length === 0)
 			{
 				// Mode d'édition des segments/étiquettes
-				if (! this_validate_list.links_mode
-				&& segment_node.closest(".target").length === 0) return;
+				if (! this_validate_list.links_mode && segment_node.closest(".target").length === 0) return;
 
 				// Mode cibles
-				if (this_validate_list.links_mode
-				&& segment_node.closest(".link_target").length === 0) return;
+				if (this_validate_list.links_mode && segment_node.closest(".link_target").length === 0) return;
 			}
 
 			// Si l'option est désactivée, la touche CTRL doit etre enfoncée pour ouvrir un popup, sinon on ne fait rien
@@ -1943,6 +1958,77 @@ function ValidateList (corpus, links_mode)
 			  {
  			  this_validate_list.openPopup(event.target, event.pageX, event.pageY);
 			  FREDoldsegment=event.target;
+			  }
+			 else FREDoldsegment=null; 
+			 //$("body").off("click"); 
+			 }
+			//else { console.log("popo"); this_validate_list.closePopup(); } 
+			// On ferme le popup si on clic en dehors de celui-ci
+			// Le timeout est une solution de "debug" (sinon popup immédiatement fermé) - à améliorer si possible !
+			/*
+			setTimeout(function () {
+				$("body").click(function (event) {
+					console.log("YUYU"); 
+ 
+					// Si le clic est effectué sur le popup affiché, on l'ignore
+					if (this_validate_list.edit_popup_is_displayed
+					&&  $(event.target).closest("#edit_popup").length != 0) return;
+
+					if (this_validate_list.links_popup_is_displayed
+					&&  $(event.target).closest("#links_popup").length != 0) return;
+					$("body").off("click");
+					this_validate_list.closePopup();		
+				});
+			}, 20);*/
+		});
+	};
+
+	// Ecoute des clics sur les segments
+	this.handleClicksOnLabelButtons = function ()
+	{
+		// TODO: handle here
+		this.documents.click(function (event) {
+			// console.log ($(event.target).attr('class'))
+			if ($(event.target).attr('class') == "segment_content") return;
+			// On se restreint aux clics sur les contenus de segments
+			// var segment_node = $(event.target).closest(".segment_content");
+			var segment_node = $(event.target).closest(".document").find(".segment_content");
+			console.log(segment_node)
+			if (segment_node.length === 0) return;
+
+			// Si on est en mode cible, on ne peut éditer que les cibles affichées
+			// Ceci n'est cependant pas vrai en mode édition
+			if (this_validate_list.target_mode && segment_node.closest(".editable").length === 0)
+			{
+				// Mode d'édition des segments/étiquettes
+				if (! this_validate_list.links_mode && segment_node.closest(".target").length === 0) return;
+
+				// Mode cibles
+				if (this_validate_list.links_mode && segment_node.closest(".link_target").length === 0) return;
+			}
+
+			// Si l'option est désactivée, la touche CTRL doit etre enfoncée pour ouvrir un popup, sinon on ne fait rien
+			if (! this_validate_list.hold_ctrl_to_subdivide_segments)
+				if (! event.ctrlKey) return;
+
+			// Si on est en train d'ajouter un lien, on ignore ce handler-ci
+			if (this_validate_list.link_is_beeing_added) return;
+
+			// Si un popup est déjà ouvert, on le ferme
+			//this_validate_list.closePopup();
+
+			// On ouvre le popup si ce n'est pas sur celui qui etait affiche
+			//if (($(event.target).closest("#edit_popup").length==0))
+			 {
+			 console.log("poop:"+event.target.innerHTML);
+			//  console.log(event.target.closest(".segment_content"));
+			 this_validate_list.closePopup();
+			 if ((FREDoldsegment==null)||(FREDoldsegment!=event.target))
+			  {
+				// this_validate_list.openPopup(event.target, event.pageX, event.pageY);
+				console.log($(event.target)[0].id)
+				this_validate_list.openPopup(segment_node, event.pageX, event.pageY, $(event.target)[0].id);
+				FREDoldsegment=event.target;
 			  }
 			 else FREDoldsegment=null; 
 			 //$("body").off("click"); 
@@ -2906,7 +2992,6 @@ function ValidateList (corpus, links_mode)
 	// Fonction d'initialisation de la liste de validation
 	this.initialize = function ()
 	{
-		// TODO: shows only sentences.
 		// On met à jour l'affichage de la liste
 		this.updateDisplay();
 
@@ -2920,12 +3005,14 @@ function ValidateList (corpus, links_mode)
 		this.updateOptionsPopupForms();
 
 		// On écoute les clics et sélections sur les segments
-		this.handleClicksOnSegments();
-		this.handleSegmentsTextSelection();
+		// this.handleClicksOnSegments();
+		this.handleClicksOnLabelButtons();
+		// this.handleSegmentsTextSelection(); // TODO: check here
 
+		// TODO: check unusefulness
 		// On écoute les clics et doubles-clics sur les phrases
-		this.handleClicksOnSentences();
-		this.handleDoubleClicksOnSentences();
+		// this.handleClicksOnSentences();
+		// this.handleDoubleClicksOnSentences();
 
 		// On surveille l'appui de touches pour les raccourcis clavier
 		this.handleSentencesRelatedKeyboardShortcuts();
