@@ -471,26 +471,34 @@ function ValidateList (corpus, links_mode)
 		// On crée le noeud contenant les boutons associés à une "phrase"
 		var buttons_group = $("<div class=\"sentence_buttons\">");
 
-		if (this.corpus.isComment(document_index)) return buttons_group;
+		// TODO: Add annotable labels here.
+		// if (this.corpus.isComment(document_index)) return buttons_group;
 		// On y ajoute un bouton de validation
-		var validate_button = $("<button class=\"validate_sentence_button\" type=\"button\">" + _string("buttons", "validate_sentence", this.language) + "</button>");
-		validate_button.click(function (event) {
-			var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
-			var target_number = this_validate_list.getTargetFromSegmentNode(segment_node);
-
-			this_validate_list.validateSentence(document_index, target_number);
-		});
-		buttons_group.append(validate_button);
+		// var validate_button = $("<button class=\"validate_sentence_button\" type=\"button\">" + _string("buttons", "validate_sentence", this.language) + "</button>");
+		// validate_button.click(function (event) {
+		// 	var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
+		// 	var target_number = this_validate_list.getTargetFromSegmentNode(segment_node);
+		// 	this_validate_list.validateSentence(document_index, target_number);
+		// });
+		// buttons_group.append(validate_button);
 
 		// ...un bouton d'annulation
-		var cancel_button = $("<button class=\"cancel_sentence_button\" type=\"button\">" + _string("buttons", "cancel_sentence", this.language) + "</button>");
-		cancel_button.click(function (event) {
-			var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
-			var target_number = this_validate_list.getTargetFromSegmentNode(segment_node);
+		// var cancel_button = $("<button class=\"cancel_sentence_button\" type=\"button\">" + _string("buttons", "cancel_sentence", this.language) + "</button>");
+		// cancel_button.click(function (event) {
+		// 	var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
+		// 	var target_number = this_validate_list.getTargetFromSegmentNode(segment_node);
 
-			this_validate_list.cancelSentence(document_index, target_number);
-		});
-		buttons_group.append(cancel_button);
+		// 	this_validate_list.cancelSentence(document_index, target_number);
+		// });
+		// buttons_group.append(cancel_button);
+
+		// var validate_button = $("<button class=\"validate_sentence_button\" type=\"button\">" + _string("buttons", "validate_sentence", this.language) + "</button>");
+		// validate_button.click(function (event) {
+		// 	// var segment_node = $(event.target).closest(".document").find(".target .segment_content")[0];
+		// 	var segment_node = 
+		// 	this_validate_list.openEditPopup(segment_node);
+		// });
+		// buttons_group.append(validate_button);
 	
 		return buttons_group;
 	};
@@ -1323,7 +1331,6 @@ function ValidateList (corpus, links_mode)
 		for (var label_index in allowed_labels)
 		{
 			var current_label = allowed_labels[label_index];
-
 			var current_label_list_element = $("<li>" + current_label + "</li>");
 			labels_list.append(current_label_list_element);
 
