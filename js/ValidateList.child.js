@@ -1349,7 +1349,7 @@ function ValidateList (corpus, links_mode)
 		for (var label_index in allowed_labels)
 		{
 			var current_label = allowed_labels[label_index];
-			var current_label_list_element = $("<li>" + current_label + "</li>");
+			var current_label_list_element = $("<li style=\"text-align: left\">" + current_label + "</li>");
 			labels_list.append(current_label_list_element);
 
 			// On met en avant le label courant du segment concerné

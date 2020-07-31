@@ -21,23 +21,33 @@ class XMLNamespaces:
 ns = XMLNamespaces(html=xmlns)
 
 
-def translate_to_json(doc: ElementTree, file_name='NULL'):
+def get_annotation_lists(src_path):
+    label1_list, label2_list = ["NULL"], ["NULL"]
+    flag = True
+    with open(src_path, 'r') as f:
+        raw_data = f.read()
+        for line in raw_data.split('\n'):
+            if flag:  # label1_list
+                if len(line) > 0 and line[0] == '-':
+                    label = line.split('(')[0][1:]
+                    label1_list.append(label)
+                if line.startswith('List of labels 2'):
+                    flag = False
+            else:  # label2_list
+                if len(line) > 0 and line[0] == '-':
+                    label = line.split('(')[0][1:]
+                    label2_list.append(label)
+    return label1_list, label2_list
+
+
+def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess/labels_list.txt'):
+    label1_list, label2_list = get_annotation_lists(src_path)
     dialogue = {
                 "header": {
                     "id": "NULL",
                     "filename": file_name,
-                    "labels_child": [
-                        "child_act_1",
-                        "child_act_2",
-                        "child_act_3",
-                        "NULL"
-                        ],
-                    "labels_parent": [
-                        "parent_act_1",
-                        "parent_act_2",
-                        "parent_act_3",
-                        "NULL"
-                        ],
+                    "labels_1": label1_list,
+                    "labels_2": label2_list,
                     "participants": []
                 },
                 "annotation": {},
@@ -146,7 +156,8 @@ def translate_to_json(doc: ElementTree, file_name='NULL'):
                     'explanation': ' '.join(explanation),
                     'subject': node.get('who'),
                     'id': node.get('uID'),
-                    'label': 'NULL',
+                    'label_1': 'NULL',
+                    'label_2': 'NULL',
                     'status_seg': 'G',
                     'status_lab': 'G'
                     }

@@ -1,0 +1,81 @@
+
+List of labels 1 (perspective of the child)
+
+-Initiation:information-seeking:explanation-seeking 
+-Initiation:information-seeking:fact-seeking
+-Initiation:non-information-seeking:permission-seeking
+-Initiation:non-information-seeking:action-seeking
+
+-Response:on-topic-no-explanation-needed
+-Response:on-topic-with-explanation
+-Response:on-topic-no-explanation-given
+-Response:unrelated
+-Response:turn-question-back
+-Response:no-response
+
+-Follow-up:agree
+-Follow-up:followup-question
+-Follow-up:re-ask-question
+-Follow-up:own-explanation
+-Follow-up:disagree
+-Follow-up:add-details-on-topic
+-Follow-up:no-response
+
+List of labels 2 (perspective of the caregivers) [this needs a bit more discussion]
+
+-Initiation:information-seeking:status-check
+-Initiation:information-seeking:ask-clarification (maybe we need more detail here?) 
+(refers to a repetition request: the parent misheard the utterance of the child)
+Since we could also interpret it as “asks for further elaboration”, we may classify it as a basic question (in opposition to an elaborate question)
+Example: “can you repeat please?”, “what did you say?”, “do you mean…?”
+-Initiation:information-seeking:specific-question (same here ?)
+(specific information, relative to context or common ground; the main difference with pedagogical questions -that may require the same answer- is the previous knowledge of the caregiver. Here, he genuinely asks about something he doesn’t know yet)
+Example: “What time does Julie's birthday start?”
+-Initiation:non-information-seeking:rhetorical
+-Initiation:non-information-seeking:redirect-attention
+-Initiation:non-information-seeking:command
+-Initiation:non-information-seeking:opinion-seeking
+-Initiation:pedagogical:specific:guess-game
+-Initiation:pedagogical:generic:short-question  (“who”, “when”, “what”)
+-Initiation:pedagogical:generic:explanation-question (“why”, “how”, “how come”,...)
+-Initiation:pedagogical:generic:choice
+-Initiation:pedagogical:generic:polar
+
+(Katheleen suggested we may want to distinguish between questions that require elaboration, which she calls "challenging questions" and the ones that do not. Can this distinction be captured with the current Initiation-related labels? if so how?)
+
+I think the only questions which require elaborate answers from children are the “how” and “why” questions (not especially the “who”, “when”, “what” questions, which are more “fact-based”). Because they all take part of “initiation:pedagogical:qu-question”, maybe we can distinguish two sub-categories: challenging questions (how, why) and fact-based questions (what, who, when, where…) → Yes cool!
+
+-Response:no-response
+-Response:on-topic-polar
+-Response:on-topic-simple
+-Response:on-topic-detailed
+-Response:on-topic-unsure
+-Response:on-topic-ask-new-question
+-Response:on-topic-ask-clarification
+-Response:unrelated
+-Response:other  
+
+Proposition of categories for responses, inspired by Jonathan’s article:
+
+-Response:answer:on-topic-simple (expected after guess game, short question, choice and polar question - not after explanation question)
+-Response:answer:on-topic-detailed (expected after explanation question)
+-Response:non-answer:declarative:acknowledgment (mmh, laugh)
+-Response:non-answer:declarative:unsure
+-Response:non-answer:declarative:don’t know
+-Response:non-answer:declarative:change the topic
+-Response:non-answer:declarative:correction
+-Response:non-answer:interrogative:clarification question
+-Response:non-answer:interrogative:dependent question
+-Response:non-answer:interrogative:change-the-topic question
+-Response:non-response
+
+-Follow-up:agree:repeat-answer
+-Follow-up:agree:signal-agreement
+-Follow-up:agree:add-info
+-Follow-up:agree:followup-question
+-Follow-up:disagree:signal-disagreement
+-Follow-up:disagree:repeat-question
+-Follow-up:disagree:rephrase-question
+-Follow-up:disagree:followup-question
+-Follow-up:disagree:give-response
+

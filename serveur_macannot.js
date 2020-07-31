@@ -63,10 +63,11 @@ function generate_annotator_version(f_name, annotator) {
             var id, fname, personal_fname, raw_data;
             id = req.url.split('?')[1].split('&')[0].split('=')[1];
             fname = req.url.split('?')[1].split('&')[1].split('=')[1];
-            console.log("Visit data with id and path: ", id, fname);
 
             if (fname.endsWith('list_file.json')) personal_fname = fname;
             else personal_fname = generate_annotator_version(fname, id);
+
+            console.log("Visit data with id and path: ", id, fname, personal_fname);
 
             if (!fs.existsSync(fname)) erreur(res, "Sorry, can't find: ", fname);
             else {
