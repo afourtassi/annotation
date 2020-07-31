@@ -497,18 +497,18 @@ function ValidateList (corpus, links_mode)
 		var button_box = $("<div>")
 		var current_label_1 = this.corpus.getTurnLabel1(document_index);
 		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1>" + current_label_1 + "</button> </div>");
-		validate_button.click(function (event) {
-			var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
-			this_validate_list.openEditPopup(segment_node, 1);
-		});
+		// validate_button.click(function (event) {
+		// 	var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
+		// 	this_validate_list.openEditPopup(segment_node, 1);
+		// });
 		button_box.append(validate_button);
 		// button_box.append($("<br>"));
 		var current_label_2 = this.corpus.getTurnLabel2(document_index);
 		var validate_button = $("<div > <button class=\"validate_sentence_button\" type=\"button\", id=2>" + current_label_2 + "</button> </div>");
-		validate_button.click(function (event) {
-			var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
-			this_validate_list.openEditPopup(segment_node, 2);
-		});
+		// validate_button.click(function (event) {
+		// 	var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
+		// 	this_validate_list.openEditPopup(segment_node, 2);
+		// });
 		button_box.append(validate_button);
 
 		buttons_group.append(button_box)
@@ -1989,7 +1989,8 @@ function ValidateList (corpus, links_mode)
 		// TODO: handle here
 		this.documents.click(function (event) {
 			// console.log ($(event.target).attr('class'))
-			if ($(event.target).attr('class') == "segment_content") return;
+			console.log($(event.target).attr('class'))
+			if ($(event.target).attr('class') != "validate_sentence_button") return;
 			// On se restreint aux clics sur les contenus de segments
 			// var segment_node = $(event.target).closest(".segment_content");
 			var segment_node = $(event.target).closest(".document").find(".segment_content");
