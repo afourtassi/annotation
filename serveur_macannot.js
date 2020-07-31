@@ -64,11 +64,18 @@ function generate_annotator_version(f_name, annotator) {
             id = req.url.split('?')[1].split('&')[0].split('=')[1];
             fname = req.url.split('?')[1].split('&')[1].split('=')[1];
             console.log("Visit data with id and path: ", id, fname);
-            personal_fname = generate_annotator_version(fname, id);
+
+            if (fname.endsWith('list_file.json')) personal_fname = fname;
+            else personal_fname = generate_annotator_version(fname, id);
+
             if (!fs.existsSync(fname)) erreur(res, "Sorry, can't find: ", fname);
             else {
                 raw_data = fs.readFileSync(fname);
-                if (!fs.existsSync(personal_fname)) fs.writeFile(personal_fname, JSON.stringify(JSON.parse(raw_data), null, 2), function (err) { if (err) { return console.log(err); } });
+                if (!fs.existsSync(personal_fname)){
+                    console.log('Create new file: ', personal_fname);
+                    // This is important: sync here
+                    fs.writeFileSync(personal_fname, JSON.stringify(JSON.parse(raw_data), null, 2), function (err) { if (err) { return console.log(err); } });
+                }
                 res.writeHead(200, { 'Content-Type': mime.lookup(fname) });
                 res.end(fs.readFileSync(personal_fname));
             }
