@@ -20,5 +20,5 @@ for sub_path in os.listdir(input_dir):
         d = translate_to_json(doc, filename)
         with open(os.path.join(data_root, filename), 'w') as f:
             json.dump(d, f, indent=4)
-        break
-    break
+    #     break
+    # break
