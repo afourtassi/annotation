@@ -1321,6 +1321,7 @@ function ValidateList (corpus, links_mode)
 	// Renvoit la liste des étiquettes du popup d'édition
 	this.getEditPopupLabelsList = function (document_index, segment, list_index)
 	{
+		console.log(document_index, list_index)
 		// var allowed_labels = this.corpus.getLabelsListBySpeaker(segment.subject);
 		var allowed_labels = this.corpus.getLabelsListByType(list_index);
 
@@ -2940,9 +2941,7 @@ function ValidateList (corpus, links_mode)
 		if (document_index >= 0)
 		{
 			console.log("Document " + document_index + " mis à jour");
-			// FIXME: should update only current sentence.
-			// this.updateSentence(document_index);
-			this.updateSentencesList();
+			this.updateSentence(document_index);
 		}
 		// Sinon, on réaffiche toute la liste à partir du corpus
 		else
