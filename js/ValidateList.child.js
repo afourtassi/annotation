@@ -1989,7 +1989,6 @@ function ValidateList (corpus, links_mode)
 		// TODO: handle here
 		this.documents.click(function (event) {
 			// console.log ($(event.target).attr('class'))
-			console.log($(event.target).attr('class'))
 			if ($(event.target).attr('class') != "validate_sentence_button") return;
 			// On se restreint aux clics sur les contenus de segments
 			// var segment_node = $(event.target).closest(".segment_content");
