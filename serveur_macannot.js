@@ -118,21 +118,20 @@ function generate_annotator_version(f_name, annotator) {
                     fs.writeFile(fname + ".done", mydata, function (err) {
                         if (err) { return console.log(err); }
                         /* on met a jour les perf si defini */
-                        var perfrep = fname.split('/');
-                        var perfrepname = perfrep[0];
-                        for (var i = 1; i < perfrep.length - 1; i++) perfrepname = perfrepname + '/' + perfrep[i];
-
-                        // console.log('find ./' + dirdata + ' -name "*.json" -print | grep -v "list_file.json" | ' + CHDIRE_TOOL + '/make_json_list_files -prefix .');
-                        //child_process.execFile('find ./'+dirdata+' -name "*.json" -print | grep -v "list_file.json" | '+CHDIRE_TOOL+'/make_json_list_files -prefix .',[],function (err, result)
-                        child_process.execFile(CHDIRE_TOOL + '/update_list_file.sh', [dirdata, dajs.annotation.name], function (err, result) {
-                            console.log('- update files : err=' + err + ' result=' + result);
-                            res.writeHead(200, { 'Content-Type': mime.lookup(dirdata + '/list_file.json.'+dajs.annotation.name) });
-                            res.end(fs.readFileSync(dirdata + '/list_file.json.'+dajs.annotation.name));
-                        });
-                        console.log('here')
+                        // var perfrep = fname.split('/');
+                        // var perfrepname = perfrep[0];
+                        // for (var i = 1; i < perfrep.length - 1; i++) perfrepname = perfrepname + '/' + perfrep[i];
                     });
+                } else {
+                    fs.unlinkSync(fname + ".done");
                 }
-                else { res.writeHead(200, { 'Content-Type': mime.lookup(dirdata + '/list_file.json.'+dajs.annotation.name) }); res.end(fs.readFileSync(dirdata + '/list_file.json.'+dajs.annotation.name)); }
+                // console.log('find ./' + dirdata + ' -name "*.json" -print | grep -v "list_file.json" | ' + CHDIRE_TOOL + '/make_json_list_files -prefix .');
+                //child_process.execFile('find ./'+dirdata+' -name "*.json" -print | grep -v "list_file.json" | '+CHDIRE_TOOL+'/make_json_list_files -prefix .',[],function (err, result)
+                child_process.execFile(CHDIRE_TOOL + '/update_list_file.sh', [dirdata, dajs.annotation.name], function (err, result) {
+                    console.log('- update files : err=' + err + ' result=' + result);
+                    res.writeHead(200, { 'Content-Type': mime.lookup(dirdata + '/list_file.json.'+dajs.annotation.name) });
+                    res.end(fs.readFileSync(dirdata + '/list_file.json.'+dajs.annotation.name));
+                });
             });
         }
         else { // le fichier n'a pas été trouvé
