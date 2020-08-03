@@ -87,7 +87,7 @@ xhttp.onreadystatechange = function()
     n_cont2.append($('<button>').text("BACK").click(function (event)
      {
        console.log(level, tlevel);
-     if ((level>0)&&(tlevel[level-2]!=undefined)) { xhttp.open("GET", tlevel[level-2]); xhttp.send(); level -= 2; }
+     if ((level>0)&&(tlevel[level-1]!=undefined)) { xhttp.open("GET", tlevel[level-1]); xhttp.send(); level -= 1; }
      } ));
 /*
     n_cont2.append($('<button>').text("OUTPUT CORPUS").css("position","fixed").css("right","6%").click(function (event) 

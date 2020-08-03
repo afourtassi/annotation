@@ -133,7 +133,7 @@ nb_file_done2(pt,&nb);
 return nb;
 }
 
-void fprintf_json(FILE *file, type_file *head, int indice, char *chprefix, int level)
+void fprintf_json(FILE *file, type_file *head, int indice, char *chprefix, int level, char *chauthor)
 {
 int i,nbid,newindice,nbex,nbok,perf;
 float prec;
@@ -156,12 +156,14 @@ for(nbid=0;head;head=head->next,nbid++)
    if (sscanf(ch,"%d %d %f",&nbex,&nbok,&prec)==3) perf=True;
    fclose(newfile);
    }
-  fprintf(file,"{\"name\":\"%s\",\"json\":\"%s/list_file.json\",\"nb\":%d,\"nbdone\":%d",head->name,chprefix,nb_file(head->down),nb_file_done(head->down));
+  if (chauthor[0] == '\0') fprintf(file,"{\"name\":\"%s\",\"json\":\"%s/list_file.json\",\"nb\":%d,\"nbdone\":%d",head->name,chprefix,nb_file(head->down),nb_file_done(head->down));
+  else fprintf(file,"{\"name\":\"%s\",\"json\":\"%s/list_file.json.%s\",\"nb\":%d,\"nbdone\":%d",head->name,chprefix,chauthor,nb_file(head->down),nb_file_done(head->down));
   if (perf) fprintf(file,",\"nbex\":%d,\"nbok\":%d,\"prec\":\"%.1f\"",nbex,nbok,prec);
   fprintf(file,"}");
-  sprintf(ch,"%s/list_file.json",chprefix);
+  if (chauthor[0] == '\0') sprintf(ch,"%s/list_file.json",chprefix);
+  else sprintf(ch,"%s/list_file.json.%s",chprefix, chauthor);
   if (!(newfile=fopen(ch,"wt"))) ERREUR("can't write in:",ch); //else fprintf(stderr,"- ouverture : %s\n",ch);
-  fprintf_json(newfile,head->down,newindice,chprefix, level+1);
+  fprintf_json(newfile,head->down,newindice,chprefix, level+1, chauthor);
   fclose(newfile);
   }
  else fprintf(file,"{\"name\":\"%s\",\"json\":\"%s\",\"nb\":1,\"nbdone\":%d}",head->name,chprefix,head->done);
@@ -175,11 +177,12 @@ fprintf(file,"]}");
 int main(int argc, char **argv)
 {
 int nb,deca,done,level;
-char ch[TailleLigne],*t_field[MAX_FIELD],chprefix[TailleLigne],chtmp[TailleLigne];
+char ch[TailleLigne],*t_field[MAX_FIELD],chprefix[TailleLigne],chtmp[TailleLigne], chauthor[TailleLigne];
 type_file *head;
 FILE *file;
 
-chprefix[0]='\0';
+chprefix[0] = '\0';
+chauthor[0] = '\0';
 if (argc>1)
  for(nb=1;nb<argc;nb++)
   if (!strcmp(argv[nb],"-prefix"))
@@ -187,6 +190,11 @@ if (argc>1)
    if (nb+1==argc) ERREUR("must have a value after argument;",argv[nb]);
    //if (!(file=fopen(argv[++nb],"rt"))) ERREUR("can't open:",argv[nb]);
    strcpy(chprefix,argv[++nb]);
+   }
+  else
+  if (!strcmp(argv[nb],"-author"))
+   {
+   if (nb+1 != argc) strcpy(chauthor,argv[++nb]);
    }
   else
   if (!strcmp(argv[nb],"-h"))
@@ -203,18 +211,29 @@ while (fgets(ch,TailleLigne,stdin)) if (ch[0]!='\n')
  {
  strtok(ch,"\n");
  //if (check_gold_json(ch,False)) done=1; else done=0; too slow !! back to the done files
- sprintf(chtmp,"%s.done",ch);
- if (file=fopen(chtmp,"rt")) { done=1; fclose(file); } else done=0; 
+ if (chauthor[0] == '\0') done=0;
+ else{
+  sprintf(chtmp,"%s.%s.done",ch, chauthor);
+  if (file=fopen(chtmp,"rt")) {
+    done=1;
+    fclose(file);
+  }
+  else done=0;
+ }
+
  if (!strncmp(ch,"./",2)) deca=2; else deca=0;
  for (nb=1,t_field[0]=strtok(ch+2,"/");(nb<MAX_FIELD)&&(t_field[nb-1]);nb++) t_field[nb]=strtok(NULL,"/");
  level=nb-1;
  if (nb==MAX_FIELD) ERREUR("cste MAX_FIELD too small","");
  head=add_json_file(head,t_field,done);
+//  printf("NB=%d  NBDONE=%d, done=%d\n",nb_file(head),nb_file_done(head), done);
  }
 fprintf(stdout,"NB=%d  NBDONE=%d\n",nb_file(head),nb_file_done(head));
-sprintf(chtmp,"%s/list_file.json",chprefix);
+if (chauthor[0] != '\0') sprintf(chtmp,"%s/list_file.json.%s",chprefix,chauthor);
+else sprintf(chtmp,"%s/list_file.json",chprefix);
+printf(chtmp);
 if (!(file=fopen(chtmp,"wt"))) ERREUR("can't write in:",chtmp); //else fprintf(stderr,"- ouverture : %s\n",chtmp);
-fprintf_json(file,head,strlen(chprefix),chprefix,0);
+fprintf_json(file,head,strlen(chprefix),chprefix,0, chauthor);
 fclose(file);
 
 exit(0);
