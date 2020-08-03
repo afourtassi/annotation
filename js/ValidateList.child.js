@@ -1393,39 +1393,39 @@ function ValidateList (corpus, links_mode)
 		}
 
 		// On lui ajoute un bouton de validation de la segmentation
-		var validate_segmentation_button = $("<button id=\"validate_segmentation_button\" type=\"button\" title=\"" + _string("tooltips", "validate_segmentation", this.language) + "\">" + _string("buttons", "validate_segmentation", this.language) + "</button>");
+		// var validate_segmentation_button = $("<button id=\"validate_segmentation_button\" type=\"button\" title=\"" + _string("tooltips", "validate_segmentation", this.language) + "\">" + _string("buttons", "validate_segmentation", this.language) + "</button>");
 		
-		validate_segmentation_button.click(function (event) {
-			this_validate_list.apply(function () {
-				// On change le statut de segmentation de ce segment
-				var segment = this_validate_list.getSegmentFromSegmentNode(segment_node);
+		// validate_segmentation_button.click(function (event) {
+		// 	this_validate_list.apply(function () {
+		// 		// On change le statut de segmentation de ce segment
+		// 		var segment = this_validate_list.getSegmentFromSegmentNode(segment_node);
 
-				segment.status_seg = "G";
-				segment.timestamp  = Date.now();
-				segment.author=this_validate_list.corpus.getAuthor(); /* on rajoute les authors au niveau des segments */
+		// 		segment.status_seg = "G";
+		// 		segment.timestamp  = Date.now();
+		// 		segment.author=this_validate_list.corpus.getAuthor(); /* on rajoute les authors au niveau des segments */
 
-				this_validate_list.closeEditPopup();
-			}, true, document_index);
-		});
+		// 		this_validate_list.closeEditPopup();
+		// 	}, true, document_index);
+		// });
 
-		buttons.push(validate_segmentation_button);
+		// buttons.push(validate_segmentation_button);
 
 		// On lui ajoute un bouton d'annulation de la segmentation
-		var cancel_segmentation_button = $("<button id=\"cancel_segmentation_button\" type=\"button\" title=\"" + _string("tooltips", "cancel_segmentation", this.language) + "\">" + _string("buttons", "cancel_segmentation", this.language) + "</button>");
+		// var cancel_segmentation_button = $("<button id=\"cancel_segmentation_button\" type=\"button\" title=\"" + _string("tooltips", "cancel_segmentation", this.language) + "\">" + _string("buttons", "cancel_segmentation", this.language) + "</button>");
 		
-		cancel_segmentation_button.click(function (event) {
-			this_validate_list.apply(function () {
-				// On change le statut de segmentation de ce segment
-				var segment = this_validate_list.getSegmentFromSegmentNode(segment_node);
+		// cancel_segmentation_button.click(function (event) {
+		// 	this_validate_list.apply(function () {
+		// 		// On change le statut de segmentation de ce segment
+		// 		var segment = this_validate_list.getSegmentFromSegmentNode(segment_node);
 
-				segment.status_seg = "C";
-				segment.timestamp  = Date.now();
+		// 		segment.status_seg = "C";
+		// 		segment.timestamp  = Date.now();
 
-				this_validate_list.closeEditPopup();
-			}, true, document_index);
-		});
+		// 		this_validate_list.closeEditPopup();
+		// 	}, true, document_index);
+		// });
 
-		buttons.push(cancel_segmentation_button);
+		// buttons.push(cancel_segmentation_button);
 
 		// Ajout de token par la droite (si ce n'est pas le dernier segment)
 		var segment_document = this.getDocumentFromSegmentNode(segment_node);
