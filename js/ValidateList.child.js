@@ -2810,7 +2810,7 @@ function ValidateList (corpus, links_mode)
 
 			console.log("data: ", data_json);
 
-			download(data_json, data_json['header']['filename'], "text/plain");
+			download(JSON.stringify(data_json, null, 2), data_json['header']['filename'], "text/plain");
 		});
 
 		// Bouton pour sortir sans envoyer au serveur

@@ -61,7 +61,7 @@ function Corpus (cojs,xhttp,filehome)
 
 	this.getCorpusJSONData = function()
 	{
-		return JSON.parse(JSON.stringify(this.data), null, 2);
+		return JSON.parse(JSON.stringify(this.data));
 	}
 
 	// --------------------------------------------------------------------------------------
