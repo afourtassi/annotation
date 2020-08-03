@@ -7,3 +7,7 @@ corpus_parser/
 node_modules/
 list_file.json
 list_file.json.a
+chatter.jar
+backup/
+corpus_tmp/
+data_tmp/
