@@ -64,8 +64,9 @@ function generate_annotator_version(f_name, annotator) {
             id = req.url.split('?')[1].split('&')[0].split('=')[1];
             fname = req.url.split('?')[1].split('&')[1].split('=')[1];
 
-            if (fname.endsWith('list_file.json')) personal_fname = fname;
-            else personal_fname = generate_annotator_version(fname, id);
+            // if (fname.endsWith('list_file.json')) personal_fname = fname;
+            // else personal_fname = generate_annotator_version(fname, id);
+            personal_fname = generate_annotator_version(fname, id);
 
             console.log("Visit data with id and path: ", id, fname, personal_fname);
 
@@ -106,14 +107,13 @@ function generate_annotator_version(f_name, annotator) {
                 fs.writeFile(fname + "." + t.getTime(), mydata, function (err) { if (err) { return console.log(err); } });
                 fs.writeFile(fname, mydata, function (err) { if (err) { return console.log(err); } }); // maintenant on ecrase l'ancien fichier hyp
                 /* on verifie que tous les exemples sont bien GOLD avant de mettre l'etiquette DONE sur le fichier */
-                gold = false;
                 // TODO: check gold
-                // for (var i = 0, gold = true; (i < dajs.documents.length) && (gold); i++) {
-                //     //console.log('id='+dajs.documents[i].id);
-                //     //  for (var j=0;(j<dajs.documents[i].segments.length)&&(!gold);j++)
-                //     //   if ((dajs.documents[i].segments[j].status_seg=='G')||(dajs.documents[i].segments[j].status_lab=='G')) gold=true;
-                //     if ((dajs.documents[i].status_seg == 'G') || (dajs.documents[i].status_lab == 'G')) gold = true;
-                // }
+                gold = true;
+                for (var i = 0; (i < dajs.documents.length) && (gold); i++) {
+                    if (dajs.documents[i].type == 'utterance' && dajs.documents[i].label_1 == 'NULL' && dajs.documents[i].label_2 == 'NULL'){
+                        gold = false;
+                    }
+                }
                 if (gold) {
                     fs.writeFile(fname + ".done", mydata, function (err) {
                         if (err) { return console.log(err); }
@@ -122,7 +122,7 @@ function generate_annotator_version(f_name, annotator) {
                         var perfrepname = perfrep[0];
                         for (var i = 1; i < perfrep.length - 1; i++) perfrepname = perfrepname + '/' + perfrep[i];
 
-                        console.log('find ./' + dirdata + ' -name "*.json" -print | grep -v "list_file.json" | ' + CHDIRE_TOOL + '/make_json_list_files -prefix .');
+                        // console.log('find ./' + dirdata + ' -name "*.json" -print | grep -v "list_file.json" | ' + CHDIRE_TOOL + '/make_json_list_files -prefix .');
                         //child_process.execFile('find ./'+dirdata+' -name "*.json" -print | grep -v "list_file.json" | '+CHDIRE_TOOL+'/make_json_list_files -prefix .',[],function (err, result)
                         child_process.execFile(CHDIRE_TOOL + '/update_list_file.sh', [dirdata], function (err, result) {
                             console.log('- update files : err=' + err + ' result=' + result);

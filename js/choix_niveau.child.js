@@ -48,8 +48,10 @@ xhttp.onreadystatechange = function()
    {
    console.log(this.responseText);
    localStorage.setItem("validator_author", authorname);
-   tlevel[0] = this.responseText.split(' ')[1]+"/list_file.json"
-   xhttp.open("GET", tlevel[0], true); xhttp.send();
+   tlevel[0] = this.responseText.split(' ')[1]+"/list_file.json"  
+  //  xhttp.open("GET", tlevel[0], true);
+   xhttp.open("GET", "annotation?id="+authorname+"&path="+tlevel[0], true);
+   xhttp.send();
    }
   else
   if (this.responseText=="IDKO") { $('body').append($('<h2>').text("Annotateur inconnu")); }
