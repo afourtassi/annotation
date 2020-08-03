@@ -59,6 +59,11 @@ function Corpus (cojs,xhttp,filehome)
 		xhttp.send(chdata);
 	};
 
+	this.getCorpusJSONData = function()
+	{
+		return JSON.parse(JSON.stringify(this.data), null, 2);
+	}
+
 	// --------------------------------------------------------------------------------------
 	// Informations sur le corpus
 	// --------------------------------------------------------------------------------------

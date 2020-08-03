@@ -8,6 +8,9 @@
 // --------------------------------------------------------------------------------------
 
 // const { listenerCount } = require("process");
+// const download = require('downloadjs')
+// import download = require("downloadjs");
+// import { download } download
 
 var FREDoldsegment = null ;
 
@@ -2787,6 +2790,27 @@ function ValidateList (corpus, links_mode)
 			this_validate_list.corpus.sendCorpusToServer();
 
 			console.log("ENVOI :", this_validate_list.corpus.data);
+		});
+
+		// Download locally
+		$("#annotation_title").click(function (event) {
+			console.log("Download Locally!");
+			var author = this_validate_list.corpus.getAuthor();
+			if ((! author) || author.length === 0)
+			{	
+				alert(_string("dialboxes", "no_author_alert", this_validate_list.language));
+				return;
+			}
+
+			// On mémorise le temps de fin d'édition
+			this_validate_list.corpus.setEndTime(Date.now());
+
+			// On envoi au serveur
+			data_json = this_validate_list.corpus.getCorpusJSONData();
+
+			console.log("data: ", data_json);
+
+			download(data_json, data_json['header']['filename'], "text/plain");
 		});
 
 		// Bouton pour sortir sans envoyer au serveur

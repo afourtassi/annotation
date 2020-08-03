@@ -1,0 +1,173 @@
+{
+    "header": {
+        "id": "11312/c-00039162-1",
+        "filename": "example3.json",
+        "labels_1": [
+            "NULL",
+            "Initiation:information-seeking:explanation-seeking ",
+            "Initiation:information-seeking:fact-seeking",
+            "Initiation:non-information-seeking:permission-seeking",
+            "Initiation:non-information-seeking:action-seeking",
+            "Response:on-topic-no-explanation-needed",
+            "Response:on-topic-with-explanation",
+            "Response:on-topic-no-explanation-given",
+            "Response:unrelated",
+            "Response:turn-question-back",
+            "Response:no-response",
+            "Follow-up:agree",
+            "Follow-up:followup-question",
+            "Follow-up:re-ask-question",
+            "Follow-up:own-explanation",
+            "Follow-up:disagree",
+            "Follow-up:add-details-on-topic",
+            "Follow-up:no-response"
+        ],
+        "labels_2": [
+            "NULL",
+            "Initiation:information-seeking:status-check",
+            "Initiation:information-seeking:ask-clarification ",
+            "Initiation:information-seeking:specific-question ",
+            "Initiation:non-information-seeking:rhetorical",
+            "Initiation:non-information-seeking:redirect-attention",
+            "Initiation:non-information-seeking:command",
+            "Initiation:non-information-seeking:opinion-seeking",
+            "Initiation:pedagogical:specific:guess-game",
+            "Initiation:pedagogical:generic:short-question  ",
+            "Initiation:pedagogical:generic:explanation-question ",
+            "Initiation:pedagogical:generic:choice",
+            "Initiation:pedagogical:generic:polar",
+            "Response:no-response",
+            "Response:on-topic-polar",
+            "Response:on-topic-simple",
+            "Response:on-topic-detailed",
+            "Response:on-topic-unsure",
+            "Response:on-topic-ask-new-question",
+            "Response:on-topic-ask-clarification",
+            "Response:unrelated",
+            "Response:other  ",
+            "Response:answer:on-topic-simple ",
+            "Response:answer:on-topic-detailed ",
+            "Response:non-answer:declarative:acknowledgment ",
+            "Response:non-answer:declarative:unsure",
+            "Response:non-answer:declarative:don\u2019t know",
+            "Response:non-answer:declarative:change the topic",
+            "Response:non-answer:declarative:correction",
+            "Response:non-answer:interrogative:clarification question",
+            "Response:non-answer:interrogative:dependent question",
+            "Response:non-answer:interrogative:change-the-topic question",
+            "Response:non-response",
+            "Follow-up:agree:repeat-answer",
+            "Follow-up:agree:signal-agreement",
+            "Follow-up:agree:add-info",
+            "Follow-up:agree:followup-question",
+            "Follow-up:disagree:signal-disagreement",
+            "Follow-up:disagree:repeat-question",
+            "Follow-up:disagree:rephrase-question",
+            "Follow-up:disagree:followup-question",
+            "Follow-up:disagree:give-response"
+        ],
+        "participants": [
+            {
+                "id": "CHI",
+                "name": "L\u00e9onard",
+                "role": "Target_Child",
+                "language": "fra",
+                "age": "P1Y11M16D",
+                "sex": "male",
+                "birthday": "1990-10-15"
+            },
+            {
+                "id": "MOT",
+                "name": "Mother",
+                "role": "Mother",
+                "language": "fra",
+                "age": "P35Y",
+                "sex": "female",
+                "birthday": "1980-08-08"
+            },
+            {
+                "id": "FAT",
+                "name": "Father",
+                "role": "Father",
+                "language": "fra",
+                "age": "P35Y",
+                "sex": "male",
+                "birthday": "1978-07-07"
+            },
+            {
+                "id": "FAM",
+                "name": "Friend",
+                "role": "Friend",
+                "language": "fra",
+                "age": "P17Y04M26D",
+                "sex": "female",
+                "birthday": "1975-05-05"
+            },
+            {
+                "id": "OBS",
+                "name": "Aliyah",
+                "role": "Investigator",
+                "language": "fra",
+                "age": "P35Y",
+                "sex": "female",
+                "birthday": "1978-08-08"
+            }
+        ],
+        "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "http://www.talkbank.org/ns/talkbank https://talkbank.org/software/talkbank.xsd",
+        "Media": "011116",
+        "Mediatypes": "video",
+        "DesignType": "long",
+        "ActivityType": "toyplay",
+        "GroupType": "TD",
+        "PID": "11312/c-00039162-1",
+        "Version": "2.16.0",
+        "Lang": "fra",
+        "Corpus": "Paris",
+        "Date": "1992-10-01"
+    },
+    "annotation": {},
+    "documents": [
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": "18:00",
+            "explanation": "Generic"
+        },
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": "18:00-18:32",
+            "explanation": "Generic"
+        },
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": "Coder - Aliyah MORGENSTERN, Christophe PARISSE Printemps 1993, Automne 1994, Et\u00e9 1995",
+            "explanation": "Generic"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "timide va . <media>",
+            "explanation": "",
+            "subject": "FAT",
+            "id": "u0",
+            "label_1": "NULL",
+            "label_2": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "timide va . <media>",
+            "explanation": "",
+            "subject": "FAT",
+            "id": "u0",
+            "label_1": "NULL",
+            "label_2": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        }
+    ]
+}
