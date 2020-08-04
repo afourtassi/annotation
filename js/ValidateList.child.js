@@ -368,7 +368,7 @@ function ValidateList (corpus, links_mode)
 		if (!this.corpus.isComment(document_index)){
 			var current_turn_utterance = this.corpus.getTurnUtterance(document_index);
 			var current_speaker = this.corpus.getTurnSpeaker(document_index);
-			var current_label = this.corpus.getTurnLabel1(document_index);
+			// var current_label = this.corpus.getTurnLabel1(document_index);
 
 			var current_speaker_label = $("<span class=\"speaker_label\">" + current_speaker + "</span>");
 			current_speaker_container.append(current_speaker_label);
@@ -396,8 +396,8 @@ function ValidateList (corpus, links_mode)
 			// current_segment_container.addClass("priority_" + current_segment.priority);
 			
 			// Statut/présence de l'étiquette
-			if (current_label !== this.empty_label)
-				current_segment_container.addClass("labelled");
+			// if (current_label !== this.empty_label)
+			// 	current_segment_container.addClass("labelled");
 
 			if (current_segment.status_lab == "G")
 				current_segment_container.addClass("label_gold");
@@ -498,16 +498,15 @@ function ValidateList (corpus, links_mode)
 
 
 		var button_box = $("<div>")
-		var current_label_1 = this.corpus.getTurnLabel1(document_index);
-		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1>" + current_label_1 + "</button> </div>");
-		// validate_button.click(function (event) {
-		// 	var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
-		// 	this_validate_list.openEditPopup(segment_node, 1);
-		// });
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 1, 'a'), "1_a") + "</button> </div>");
+		button_box.append(validate_button);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1_b>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 1, 'b'), "1_b") + "</button> </div>");
+		button_box.append(validate_button);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'a'), "2_a") + "</button> </div>");
+		button_box.append(validate_button);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'b'), "2_a") + "</button> </div>");
 		button_box.append(validate_button);
 		// button_box.append($("<br>"));
-		var current_label_2 = this.corpus.getTurnLabel2(document_index);
-		var validate_button = $("<div > <button class=\"validate_sentence_button\" type=\"button\", id=2>" + current_label_2 + "</button> </div>");
 		// validate_button.click(function (event) {
 		// 	var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
 		// 	this_validate_list.openEditPopup(segment_node, 2);
@@ -518,6 +517,12 @@ function ValidateList (corpus, links_mode)
 	
 		return buttons_group;
 	};
+
+	this.parseButtonLabelNULL = function (label_name, id)
+	{
+		if (label_name == "NULL") return "label_" + id + "(" + label_name + ")";
+		else return label_name;
+	}
 
 	// Renvoit le ou les noeuds représentant une phrase (un document) sous forme de tableau
 	this.getSentenceNodes = function (document_index)
@@ -1335,8 +1340,10 @@ function ValidateList (corpus, links_mode)
 				this_validate_list.apply(function () {
 					// On met à jour les données du corpus
 					// TODO: add label_2
-					if (list_index == 1) segment.label_1	= label;
-					if (list_index == 2) segment.label_2	= label;
+					if (list_index == "1_a") segment.label_1_a	= label;
+					if (list_index == "1_b") segment.label_1_b	= label;
+					if (list_index == "2_a") segment.label_2_a	= label;
+					if (list_index == "2_b") segment.label_2_b	= label;
 					segment.timestamp  = Date.now();
 					segment.status_lab = "G";
 					segment.status_seg = "G"; /* maintenant on valide la seg des qu'on valide le label */
@@ -1955,17 +1962,18 @@ function ValidateList (corpus, links_mode)
 
 			// On ouvre le popup si ce n'est pas sur celui qui etait affiche
 			//if (($(event.target).closest("#edit_popup").length==0))
-			 {
-			 console.log("poop:"+event.target.innerHTML);
-			 this_validate_list.closePopup();
-			 if ((FREDoldsegment==null)||(FREDoldsegment!=event.target))
-			  {
- 			  this_validate_list.openPopup(event.target, event.pageX, event.pageY);
-			  FREDoldsegment=event.target;
-			  }
-			 else FREDoldsegment=null; 
-			 //$("body").off("click"); 
-			 }
+			// TODO: come back and check here
+			//  {
+			//  console.log("poop:"+event.target.innerHTML);
+			//  this_validate_list.closePopup();
+			//  if ((FREDoldsegment==null)||(FREDoldsegment!=event.target))
+			//   {
+ 			//   this_validate_list.openPopup(event.target, event.pageX, event.pageY);
+			//   FREDoldsegment=event.target;
+			//   }
+			//  else FREDoldsegment=null; 
+			//  //$("body").off("click"); 
+			//  }
 			//else { console.log("popo"); this_validate_list.closePopup(); } 
 			// On ferme le popup si on clic en dehors de celui-ci
 			// Le timeout est une solution de "debug" (sinon popup immédiatement fermé) - à améliorer si possible !

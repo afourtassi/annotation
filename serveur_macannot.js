@@ -110,7 +110,7 @@ function generate_annotator_version(f_name, annotator) {
                 // TODO: check gold
                 gold = true;
                 for (var i = 0; (i < dajs.documents.length) && (gold); i++) {
-                    if (dajs.documents[i].type == 'utterance' && dajs.documents[i].label_1 == 'NULL' && dajs.documents[i].label_2 == 'NULL'){
+                    if (dajs.documents[i].type == 'utterance' && dajs.documents[i].label_1_a == 'NULL' && dajs.documents[i].label_1_b == 'NULL' && dajs.documents[i].label_2_a == 'NULL' && dajs.documents[i].label_2_b == 'NULL'){
                         gold = false;
                     }
                 }
@@ -123,7 +123,7 @@ function generate_annotator_version(f_name, annotator) {
                         // for (var i = 1; i < perfrep.length - 1; i++) perfrepname = perfrepname + '/' + perfrep[i];
                     });
                 } else {
-                    fs.unlinkSync(fname + ".done");
+                    if (fs.existsSync(fname + ".done")) fs.unlinkSync(fname + ".done");
                 }
                 // console.log('find ./' + dirdata + ' -name "*.json" -print | grep -v "list_file.json" | ' + CHDIRE_TOOL + '/make_json_list_files -prefix .');
                 //child_process.execFile('find ./'+dirdata+' -name "*.json" -print | grep -v "list_file.json" | '+CHDIRE_TOOL+'/make_json_list_files -prefix .',[],function (err, result)

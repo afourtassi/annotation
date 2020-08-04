@@ -196,14 +196,13 @@ function Corpus (cojs,xhttp,filehome)
 		return this.getDocument(document_index).explanation;
 	}
 
-	this.getTurnLabel1 = function (document_index)
+	this.getTurnLabel = function (document_index, index, type)
 	{
-		return this.getDocument(document_index).label_1;
-	}
-
-	this.getTurnLabel2 = function (document_index)
-	{
-		return this.getDocument(document_index).label_2;
+		if (index == 1 && type == 'a') return this.getDocument(document_index).label_1_a;
+		else if (index == 1 && type == 'b') return this.getDocument(document_index).label_1_b;
+		else if (index == 2 && type == 'a') return this.getDocument(document_index).label_2_a;
+		else if (index == 2 && type == 'b') return this.getDocument(document_index).label_2_b;
+		else return 'Wrong index-type';
 	}
 
 	this.getImage = function (document_index)
@@ -272,9 +271,9 @@ function Corpus (cojs,xhttp,filehome)
 
 	this.getLabelsListByType = function (list_index)
 	{
-		if (list_index == 1)
+		if (list_index == "1_a" || list_index == "1_b")
 			return this.data.header.labels_1;
-		else if (list_index == 2)
+		else if (list_index == "2_a" || list_index == "2_b")
 			return this.data.header.labels_2;
 		else{
 			console.error("Wrong List Type: ", list_index);

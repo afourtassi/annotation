@@ -156,8 +156,10 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
                     'explanation': ' '.join(explanation),
                     'subject': node.get('who'),
                     'id': node.get('uID'),
-                    'label_1': 'NULL',
-                    'label_2': 'NULL',
+                    'label_1_a': 'NULL',
+                    'label_1_b': 'NULL',
+                    'label_2_a': 'NULL',
+                    'label_2_b': 'NULL',
                     'status_seg': 'G',
                     'status_lab': 'G'
                     }
