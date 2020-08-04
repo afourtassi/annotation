@@ -60,9 +60,7 @@
             "Follow-up:disagree:rephrase-question",
             "Follow-up:disagree:followup-question",
             "Follow-up:disagree:give-response",
-            "Follow-up:noresponse",
-            "Initiation:information-seeking:ask-clarification ",
-            "Initiation:information-seeking:specific-question "
+            "Follow-up:noresponse"
         ],
         "participants": [
             {
