@@ -2826,7 +2826,9 @@ function ValidateList (corpus, links_mode)
 			var confirm = window.confirm(_string("dialboxes", "leave_without_saving_confirm", this_validate_list.language));
 			if (! confirm) return;
 			console.log("we leave");
-	                this_validate_list.corpus.xhttp.open("GET", this_validate_list.corpus.filehome, true); this_validate_list.corpus.xhttp.send();
+			// this_validate_list.corpus.xhttp.open("GET", this_validate_list.corpus.filehome, true);
+			this_validate_list.corpus.xhttp.open("GET", "annotation?id="+this_validate_list.getSavedAuthor()+"&path="+this_validate_list.corpus.filehome, true);
+			this_validate_list.corpus.xhttp.send();
 		});
 
 	};
