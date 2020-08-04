@@ -504,7 +504,7 @@ function ValidateList (corpus, links_mode)
 		button_box.append(validate_button);
 		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'a'), "2_a") + "</button> </div>");
 		button_box.append(validate_button);
-		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'b'), "2_a") + "</button> </div>");
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_b>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'b'), "2_b") + "</button> </div>");
 		button_box.append(validate_button);
 		// button_box.append($("<br>"));
 		// validate_button.click(function (event) {
