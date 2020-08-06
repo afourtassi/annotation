@@ -11,6 +11,13 @@ function eventFire(el, etype){
   }
 }
 
+function stripAuthorName(filename, authorname){
+  while (filename.endsWith('.' + authorname)) {
+    filename = filename.slice(0, -1-authorname.length);
+  }
+  return filename;
+}
+
 $(function() {
 
 var xhttp = new XMLHttpRequest();
@@ -122,9 +129,9 @@ xhttp.onreadystatechange = function()
         {
         $(this).css('background-color','blue');
         var i=$(this).attr('id').split('c')[1];
-        console.log('file='+lfile.data[i].json+" annotator="+authorname);
+        console.log('file='+lfile.data[i].json+" annotator="+authorname+" filename="+stripAuthorName(lfile.data[i].json, authorname));
         level=lfile.level; tlevel[level]=lfile.data[i].json;
-        xhttp.open("GET", "annotation?id="+authorname+"&path="+lfile.data[i].json, true);
+        xhttp.open("GET", "annotation?id="+authorname+"&path="+stripAuthorName(lfile.data[i].json, authorname), true);
         xhttp.send();
         });
        cell.mouseover(function(event)
