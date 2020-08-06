@@ -94,7 +94,13 @@ xhttp.onreadystatechange = function()
     n_cont2.append($('<button>').text("BACK").click(function (event)
      {
        console.log(level, tlevel);
-     if ((level>0)&&(tlevel[level-1]!=undefined)) { xhttp.open("GET", tlevel[level-1]); xhttp.send(); level -= 1; }
+     if ((level>0)&&(tlevel[level-1]!=undefined)) {
+       console.log('file='+tlevel[level-1]+" annotator="+authorname+" filename="+stripAuthorName(tlevel[level-1]));
+       xhttp.open("GET", "annotation?id="+authorname+"&path="+stripAuthorName(tlevel[level-1]), true);
+      //  xhttp.open("GET", tlevel[level-1]);
+       xhttp.send();
+       level -= 1;
+      }
      } ));
 /*
     n_cont2.append($('<button>').text("OUTPUT CORPUS").css("position","fixed").css("right","6%").click(function (event) 
@@ -167,9 +173,9 @@ xhttp.onreadystatechange = function()
        {
        $(this).css('background-color','blue');
        var i=$(this).attr('id').split('f')[1];
-       console.log('file='+lfile.data[i].json+" annotator="+authorname);
+       console.log('file='+lfile.data[i].json+" annotator="+authorname+" filename="+stripAuthorName(lfile.data[i].json, authorname));
        level=lfile.level; tlevel[level]=lfile.data[i].json;
-       xhttp.open("GET", "annotation?id="+authorname+"&path="+lfile.data[i].json, true);
+       xhttp.open("GET", "annotation?id="+authorname+"&path="+stripAuthorName(lfile.data[i].json, authorname), true);
        xhttp.send();
        });
       row.mouseover(function(event)

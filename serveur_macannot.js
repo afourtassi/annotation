@@ -72,7 +72,7 @@ function generate_annotator_version(f_name, annotator) {
 
             console.log("Visit data with id and path: ", id, fname, personal_fname);
 
-            if (!fs.existsSync(fname)) erreur(res, "Sorry, can't find: ", fname);
+            if (!fs.existsSync(fname)) erreur(res, "Sorry, can't find: " + fname);
             else {
                 raw_data = fs.readFileSync(fname);
                 if (!fs.existsSync(personal_fname)){
