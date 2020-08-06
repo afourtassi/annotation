@@ -40,6 +40,16 @@ def get_annotation_lists(src_path):
     return label1_list, label2_list
 
 
+def get_words(node):
+    words = []
+    for t_node in node:
+        if t_node.tag == ns('{html}w'):
+            words.append(t_node.text)
+        else:
+            words.extend(get_words(t_node))
+    return words
+
+
 def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess/labels_list.txt'):
     label1_list, label2_list = get_annotation_lists(src_path)
     dialogue = {
@@ -139,20 +149,22 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
                 elif u_node.tag in (ns('{html}s')):
                     words.append(';')
                 elif u_node.tag in (ns('{html}linker')):
-                    words.append('<quote>')
+                    words.append('[quote]')
                 elif u_node.tag in (ns('{html}pg')):
-                    pass
+                    words.extend(get_words(u_node))
+                    # print(get_words(u_node))
                 elif u_node.tag in (ns('{html}media')):
-                    words.append('<media>')
+                    words.append('[media]')
                 elif u_node.tag in (ns('{html}postcode')):
-                    words.append('<postcode>')
+                    words.append('[postcode]')
                 else:
+                    get_words(u_node)
                     print(u_node.attrib)
                     raise TypeError(f'u/{u_node.tag.replace(xmlns_str, "")}')
             line = {
                     'type': 'utterance',
                     'annotable': True,
-                    'turn': ' '.join([x for x in words if x]),  # Avoid NoneType Error
+                    'turn': ' '.join([x for x in words if x]).replace('<', r'\<').replace('>', r'\>'),  # Avoid NoneType Error
                     'explanation': ' '.join(explanation),
                     'subject': node.get('who'),
                     'id': node.get('uID'),
@@ -168,7 +180,7 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
             line = {
                     'type': 'comment',
                     'annotable': False,
-                    'turn': node.text,
+                    'turn': node.text.replace('<', r'\<').replace('>', r'\>'),
                     'explanation': node.get('type')
                     }
             dialogue['documents'].append(line)
@@ -176,7 +188,7 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
             line = {
                     'type': 'gem',
                     'annotable': False,
-                    'turn': node.get('label'),
+                    'turn': node.get('label').replace('<', r'\<').replace('>', r'\>'),
                     'explanation': node.tag.replace(xmlns_str, ""),
                     }
             dialogue['documents'].append(line)

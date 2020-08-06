@@ -22,6 +22,8 @@ function erreur(res, mesg) {
 // liste des annotateurs autorisés avec login (id) et mot de passe (mdp)
 var Table_Annotator =
     [
+        { id: "morgane", mdp: "morgane", data_dir: CHDIRE_DATA },
+        { id: "charlie", mdp: "charlie", data_dir: CHDIRE_DATA },
         { id: "f", mdp: "f", data_dir: CHDIRE_DATA },
         { id: "a", mdp: "a", data_dir: CHDIRE_DATA }
     ];
