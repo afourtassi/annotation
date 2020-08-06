@@ -257,18 +257,6 @@ function Corpus (cojs,xhttp,filehome)
 		return matching_links;
 	};
 
-	this.getLabelsListBySpeaker = function (speaker_type)
-	{
-		if (speaker_type == "CHI")
-			return this.data.header.labels_child;
-		else if (speaker_type == "FAT" || speaker_type == "MOT")
-			return this.data.header.labels_parent;
-		else{
-			console.error("Wrong Type: ", speaker_type);
-			return ["NULL"];
-		}
-	};
-
 	this.getLabelsListByType = function (list_index)
 	{
 		if (list_index == "1_a" || list_index == "1_b")

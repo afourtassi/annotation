@@ -566,12 +566,17 @@ function ValidateList (corpus, links_mode)
 				current_sentence.append(current_sentence_buttons);
 			}
 
+			var current_left_container = $("<div class=\"left_container\">");
+			current_left_container.append($("<div class=\"numberCircle\">" + document_index + "</div>"));
+			current_left_container.append(current_content_node);
+
 			// On lui ajoute ensuite le contenu de l'occurence de la "phrase" courante
-			current_sentence.append(current_content_node);
+			current_sentence.append(current_left_container);
+
 
 			// Maintenant on ajoute une image si existe XXXX
-			var image=this.corpus.getImage(document_index);
-			if (image!=null) current_sentence.append($('<img src="'+image+'" class="sentence_img"/>'));   
+			// var image=this.corpus.getImage(document_index);
+			// if (image!=null) current_sentence.append($('<img src="'+image+'" class="sentence_img"/>'));   
 
 			// On ajoute finalement cette occurence à la liste
 			sentence_nodes.push(current_sentence);
@@ -1330,7 +1335,6 @@ function ValidateList (corpus, links_mode)
 	this.getEditPopupLabelsList = function (document_index, segment, list_index)
 	{
 		console.log(document_index, list_index)
-		// var allowed_labels = this.corpus.getLabelsListBySpeaker(segment.subject);
 		var allowed_labels = this.corpus.getLabelsListByType(list_index);
 
 		// On écrit une fonction pour ajouter un handler de clic sur les éléments de la liste
