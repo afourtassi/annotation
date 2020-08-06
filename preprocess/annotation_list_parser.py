@@ -22,4 +22,4 @@ def get_annotation_lists(src_path='./preprocess/labels_list.txt'):
 
 if __name__ == "__main__":
     label1, label2 = get_annotation_lists()
-    print(label1, label2)
+    print(label1, '\n', label2)

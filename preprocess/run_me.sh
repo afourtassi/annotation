@@ -31,19 +31,25 @@ if [ "$#" -eq 1 ]
 then
     if [ ! -d "$DATA_ROOT/$1" ]
     then
-        if [ $1 == "Lyon" ] || [ $1 == "Paris" ] || [ $1 == "Yamaguchi" ]
+        if [ ! -e "$CORPUS_TMP/$1.zip" ]
         then
-            echo "Downloading: https://phonbank.talkbank.org/data/French/$1.zip"
-            wget -P "$CORPUS_TMP/" "https://phonbank.talkbank.org/data/French/$1.zip"
-        elif [ $1 == "York" ]
-        then
-            echo "Downloading: https://childes.talkbank.org/data/French/$1.zip"
-            wget -P "$CORPUS_TMP/" "https://childes.talkbank.org/data/French/$1.zip"
-        else
-            echo "Need to add new Corpus!"
+            if [ $1 == "Lyon" ] || [ $1 == "Paris" ] || [ $1 == "Yamaguchi" ]
+            then
+                echo "Downloading: https://phonbank.talkbank.org/data/French/$1.zip"
+                wget -P "$CORPUS_TMP/" "https://phonbank.talkbank.org/data/French/$1.zip"
+            elif [ $1 == "York" ]
+            then
+                echo "Downloading: https://childes.talkbank.org/data/French/$1.zip"
+                wget -P "$CORPUS_TMP/" "https://childes.talkbank.org/data/French/$1.zip"
+            else
+                echo "Need to add new Corpus!"
+            fi
         fi
-        unzip "$CORPUS_TMP/$1.zip" -d "$CORPUS_TMP"
-        java -cp "$CORPUS_TMP/chatter.jar" org.talkbank.chatter.App --inputFormat cha --outputFormat xml --outputDir "$CORPUS_TMP/$1-xml" -tree "$CORPUS_TMP/$1"
+        if [ ! -d "$CORPUS_TMP/$1-xml" ]
+        then
+            unzip "$CORPUS_TMP/$1.zip" -d "$CORPUS_TMP"
+            java -cp "$CORPUS_TMP/chatter.jar" org.talkbank.chatter.App --inputFormat cha --outputFormat xml --outputDir "$CORPUS_TMP/$1-xml" -tree "$CORPUS_TMP/$1"
+        fi
         python3 preprocess/process_xml.py "$CORPUS_TMP/$1-xml" "$DATA_ROOT" "$1"
     else
         echo "Corpus $1 has been processed."
