@@ -180,7 +180,7 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
             line = {
                     'type': 'comment',
                     'annotable': False,
-                    'turn': node.text.replace('<', r'\<').replace('>', r'\>'),
+                    'turn': [node.text.replace('<', r'\<').replace('>', r'\>') if node.text else ' '],
                     'explanation': node.get('type')
                     }
             dialogue['documents'].append(line)

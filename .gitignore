@@ -12,3 +12,5 @@ backup/
 corpus_tmp/
 data_tmp/
 data/
+list_file.json*
+*.zip
