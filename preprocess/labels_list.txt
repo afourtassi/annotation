@@ -16,6 +16,7 @@ List of labels 1 (perspective of the child)
 -Response:Answer:with-explanation-high-quality
 -Response:Non-answer:declarative:do-not-know
 -Response:Non-answer:declarative:change-topic
+-Response:Non-answer:declarative:dependent
 -Response:Non-answer:declarative:encouragement-to-search
 -Response:Non-answer:interrogative:change-topic
 -Response:Non-answer:interrogative:dependent
@@ -61,6 +62,7 @@ List of labels 2 (perspective of the caregivers)
 -Response:Answer:non-verbal
 -Response:Non-answer:declarative:do-not-know
 -Response:Non-answer:declarative:change-topic
+-Response:Non-answer:declarative:dependent
 -Response:Non-answer:interrogative:change-topic
 -Response:Non-answer:interrogative:dependent
 -Response:Feedback
