@@ -2825,6 +2825,30 @@ function ValidateList (corpus, links_mode)
 			download(JSON.stringify(data_json, null, 2), data_json['header']['filename'], "text/plain");
 		});
 
+		$('#upload_annotation_selector').change(function (event){
+			console.log('here');
+			console.log(this_validate_list.corpus.data);
+			console.log(event.target);
+			// console.log(event.target.files[0]);
+			var json = null;
+			var reader = new FileReader();
+			reader.readAsText(event.target.files[0], "UTF-8");
+			reader.onload = function (evt) {
+				// console.log(evt.target.result)
+				try{
+					json = JSON.parse(evt.target.result);
+					var author = this_validate_list.corpus.getAuthor()
+					this_validate_list.corpus.data = json;
+					this_validate_list.corpus.setAuthor(author);
+					this_validate_list.updateDisplay();
+				}
+				catch(e){
+					alert('there was an error: ' + e);
+				}
+			}
+			// console.log(json);
+		});
+
 		// Bouton pour sortir sans envoyer au serveur
 		$("#leave_without_saving_button").click(function (event) {
 			var confirm = window.confirm(_string("dialboxes", "leave_without_saving_confirm", this_validate_list.language));

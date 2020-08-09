@@ -11,6 +11,12 @@ $('body').append(n_section);
   n_mainmenu.append($('<button>').attr('id','display_options_popup_button').attr('type','button').text('Afficher les options'));
   // n_mainmenu.append($('<text>').attr('id', 'annotation_title').text('Title'));
   n_mainmenu.append($('<button>').attr('id', 'annotation_title').text('Title'));
+  n_mainmenu.append($('<button>').attr('id', 'upload_anotation_button').text('Load From File').attr('onclick', "document.getElementById('upload_annotation_selector').click()"));
+  n_mainmenu.append($('<input>').attr('type', 'file').attr('id', 'upload_annotation_selector').attr('style', "display:none").text('Upload'));
+  
+  // <button style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">Your text here</button>
+  // <input type='file' id="getFile" style="display:none"></input>
+
   // n_mainmenu.append($('<button>').attr('id','target_mode_button').attr('class','desactivate').attr('type','button').text('Prise en compte des cibles'));
   // n_mainmenu.append($('<button>').attr('id','validate_sentence_by_sentence_button').attr('type','button').text('Validation phrase par phrase'));
   n_mainmenu.append($('<button>').attr('id','undo_button').attr('type','button').text('Annuler'));
