@@ -37,6 +37,7 @@ List of labels 1 (perspective of the child)
  
 -Annotation-trouble
 -Complex-long
+-No-response+No-follow-up
  
  
 List of labels 2 (perspective of the caregivers) 
@@ -89,4 +90,5 @@ List of labels 2 (perspective of the caregivers)
  
 -Annotation-trouble
 -Complex-long
+-No-response+No-follow-up
 
