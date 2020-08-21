@@ -11,7 +11,6 @@ List of labels 1 (perspective of the child)
 -Initiation:Other 
  
 -Response:Answer:no-explanation-needed
--Response:Answer:no-explanation-given
 -Response:Answer:with-explanation-low-quality
 -Response:Answer:with-explanation-high-quality
 -Response:Non-answer:declarative:do-not-know
@@ -57,7 +56,6 @@ List of labels 2 (perspective of the caregivers)
 -Initiation:Other
  
 -Response:Answer:no-explanation-needed
--Response:Answer:no-explanation-given
 -Response:Answer:with-explanation-low-quality
 -Response:Answer:with-explanation-high-quality
 -Response:Answer:non-verbal
@@ -74,7 +72,6 @@ List of labels 2 (perspective of the caregivers)
 -Follow-up:Repeat-answer
 -Follow-up:Followup-question
 -Follow-up:Agree+followup-question
--Follow-up:Agree+ask-for-more-information
 -Follow-up:Disagree
 -Follow-up:Repeat-question
 -Follow-up:Disagree+repeat-question
@@ -84,7 +81,6 @@ List of labels 2 (perspective of the caregivers)
 -Follow-up:Questioning-answer
 -Follow-up:Ask-clarification
 -Follow-up:Encouragement-to-search
--Follow-up:Ask-for-more-information
 -Follow-up:No-response
 -Follow-up:Other
  
