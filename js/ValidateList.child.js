@@ -502,10 +502,16 @@ function ValidateList (corpus, links_mode)
 		button_box.append(validate_button);
 		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1_b>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 1, 'b'), "1_b") + "</button> </div>");
 		button_box.append(validate_button);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=1_c>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 1, 'c'), "1_c") + "</button> </div>");
+		button_box.append(validate_button);
+
 		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_a>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'a'), "2_a") + "</button> </div>");
 		button_box.append(validate_button);
 		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_b>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'b'), "2_b") + "</button> </div>");
 		button_box.append(validate_button);
+		var validate_button = $("<div> <button class=\"validate_sentence_button\" type=\"button\", id=2_c>" + this.parseButtonLabelNULL(this.corpus.getTurnLabel(document_index, 2, 'c'), "2_c") + "</button> </div>");
+		button_box.append(validate_button);
+
 		// button_box.append($("<br>"));
 		// validate_button.click(function (event) {
 		// 	var segment_node = $(event.target).closest(".document").find(".segment_content")[0];
@@ -1346,8 +1352,10 @@ function ValidateList (corpus, links_mode)
 					// TODO: add label_2
 					if (list_index == "1_a") segment.label_1_a	= label;
 					if (list_index == "1_b") segment.label_1_b	= label;
+					if (list_index == "1_c") segment.label_1_c	= label;
 					if (list_index == "2_a") segment.label_2_a	= label;
 					if (list_index == "2_b") segment.label_2_b	= label;
+					if (list_index == "2_c") segment.label_2_c	= label;
 					segment.timestamp  = Date.now();
 					segment.status_lab = "G";
 					segment.status_seg = "G"; /* maintenant on valide la seg des qu'on valide le label */

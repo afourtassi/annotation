@@ -112,7 +112,7 @@ function generate_annotator_version(f_name, annotator) {
                 // TODO: check gold
                 gold = true;
                 for (var i = 0; (i < dajs.documents.length) && (gold); i++) {
-                    if (dajs.documents[i].type == 'utterance' && dajs.documents[i].label_1_a == 'NULL' && dajs.documents[i].label_1_b == 'NULL' && dajs.documents[i].label_2_a == 'NULL' && dajs.documents[i].label_2_b == 'NULL'){
+                    if (dajs.documents[i].type == 'utterance' && dajs.documents[i].label_1_a == 'NULL' && dajs.documents[i].label_1_b == 'NULL' && dajs.documents[i].label_1_c == 'NULL' && dajs.documents[i].label_2_a == 'NULL' && dajs.documents[i].label_2_b == 'NULL'  && dajs.documents[i].label_2_c == 'NULL'){
                         gold = false;
                     }
                 }

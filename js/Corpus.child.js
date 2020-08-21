@@ -200,8 +200,10 @@ function Corpus (cojs,xhttp,filehome)
 	{
 		if (index == 1 && type == 'a') return this.getDocument(document_index).label_1_a;
 		else if (index == 1 && type == 'b') return this.getDocument(document_index).label_1_b;
+		else if (index == 1 && type == 'c') return this.getDocument(document_index).label_1_c;
 		else if (index == 2 && type == 'a') return this.getDocument(document_index).label_2_a;
 		else if (index == 2 && type == 'b') return this.getDocument(document_index).label_2_b;
+		else if (index == 2 && type == 'c') return this.getDocument(document_index).label_2_c;
 		else return 'Wrong index-type';
 	}
 
@@ -259,9 +261,9 @@ function Corpus (cojs,xhttp,filehome)
 
 	this.getLabelsListByType = function (list_index)
 	{
-		if (list_index == "1_a" || list_index == "1_b")
+		if (list_index == "1_a" || list_index == "1_b" || list_index == "1_c")
 			return this.data.header.labels_1;
-		else if (list_index == "2_a" || list_index == "2_b")
+		else if (list_index == "2_a" || list_index == "2_b" || list_index == "2_c")
 			return this.data.header.labels_2;
 		else{
 			console.error("Wrong List Type: ", list_index);

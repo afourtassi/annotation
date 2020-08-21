@@ -170,8 +170,10 @@ def translate_to_json(doc: ElementTree, file_name='NULL', src_path='./preprocess
                     'id': node.get('uID'),
                     'label_1_a': 'NULL',
                     'label_1_b': 'NULL',
+                    'label_1_c': 'NULL',
                     'label_2_a': 'NULL',
                     'label_2_b': 'NULL',
+                    'label_2_c': 'NULL',
                     'status_seg': 'G',
                     'status_lab': 'G'
                     }

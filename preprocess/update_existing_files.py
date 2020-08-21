@@ -43,6 +43,10 @@ for root, dirs, files in os.walk("data"):
             data = json.load(f)
         data['header']['labels_1'] = label1_list
         data['header']['labels_2'] = label2_list
+        for sentence in data['documents']:
+            if sentence['type'] == 'utterance':
+                sentence['label_1_c'] = 'NULL'
+                sentence['label_2_c'] = 'NULL'
         # print(data)
         with open(json_path_full, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2)
