@@ -5,7 +5,8 @@
   "main": "serveur_macannot.js",
   "dependencies": {
     "mime": "^1.6.0",
-    "node-gyp": "^7.0.0"
+    "node-gyp": "^7.0.0",
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {},
   "scripts": {
