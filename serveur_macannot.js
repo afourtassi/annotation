@@ -94,6 +94,16 @@ function generate_annotator_version(f_name, annotator) {
             if (i != Table_Annotator.length) { res.writeHead(200, { 'Content-Type': 'text/plain' }); res.end('IDOK ' + Table_Annotator[i].data_dir); }
             else { res.writeHead(200, { 'Content-Type': 'text/plain' }); res.end('UNKNOWN'); }
         }
+        else if ((req.url.indexOf('/serverless?id=') == 0) && (req.url.indexOf('&mdp=') != -1)) {
+            // TODO: /serverless?id=gg&mdp=ff
+            var id, mdp, i, mesg;
+            id = req.url.split('?')[1].split('&')[0].split('=')[1];
+            mdp = req.url.split('?')[1].split('&')[1].split('=')[1];
+            console.log("id=" + id + "  mdp=" + mdp);
+            for (i = 0; (i < Table_Annotator.length) && ((Table_Annotator[i].id != id) || (Table_Annotator[i].mdp != mdp)); i++);
+            if (i != Table_Annotator.length) { res.writeHead(200, { 'Content-Type': 'text/plain' }); res.end('IDOK ' + Table_Annotator[i].data_dir); }
+            else { res.writeHead(200, { 'Content-Type': 'text/plain' }); res.end('UNKNOWN'); }
+        }
         else if ((url.pathname == '/commit') && (req.method == 'POST')) {
             var mydata = '';
             req.on('data', function (data) { mydata += data; });
@@ -142,6 +152,6 @@ function generate_annotator_version(f_name, annotator) {
     }).listen(PORT, SERVEUR);
 
     console.log('Server ' + SERVEUR + ' listening on port: ' + PORT);
-    console.log('Try http://localhost:8888/child.html');
+    console.log(`Try http://localhost:` + PORT + `/child.html`);
 })();
 

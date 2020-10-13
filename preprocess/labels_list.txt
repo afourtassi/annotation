@@ -1,90 +1,56 @@
 
 List of labels 1 (perspective of the child)
 
--Initiation:Information-seeking:fact-based
--Initiation:Information-seeking:explanation-seeking
--Initiation:Non-information-seeking:permission
--Initiation:Non-information-seeking:action
--Initiation:Non-information-seeking:clarification
--Initiation:Non-information-seeking:attention
--Initiation:Non-information-seeking:status-check
--Initiation:Other 
+-CHI-Initiation:Information-seeking:fact-based
+-CHI-Initiation:Information-seeking:explanation-seeking
+-CHI-Initiation:Non-information-seeking
  
--Response:Answer:no-explanation-needed
--Response:Answer:with-explanation-low-quality
--Response:Answer:with-explanation-high-quality
--Response:Non-answer:declarative:do-not-know
--Response:Non-answer:declarative:change-topic
--Response:Non-answer:declarative:dependent
--Response:Non-answer:declarative:encouragement-to-search
--Response:Non-answer:interrogative:change-topic
--Response:Non-answer:interrogative:dependent
--Response:Non-answer:interrogative:encouragement-to-search
--Response:Feedback (conversation management/form rather than content)
--Response:No-response
--Response:Other
+-PAR-Response:Answer:no-explanation-needed
+-PAR-Response:Answer:with-explanation-low-quality
+-PAR-Response:Answer:with-explanation-high-quality
+-PAR-Response:Non-answer:declarative
+-PAR-Response:Non-answer:interrogative
+-PAR-Response:No-response
 
--Follow-up:Signal-agreement
--Follow-up:Signal-disagreement
--Follow-up:Repeat-answer
--Follow-up:Followup-question
--Follow-up:Re-ask-initial-question
--Follow-up:Add-details-on-topic
--Follow-up:Own-explanation
--Follow-up:No-response
--Follow-up:Other
- 
--Annotation-trouble
+-CHI-Follow-up:Signal-agreement
+-CHI-Follow-up:Signal-disagreement
+-CHI-Follow-up:Repeat-answer
+-CHI-Follow-up:Followup-question
+-CHI-Follow-up:Re-ask-initial-question
+-CHI-Follow-up:Own-explanation
+-CHI-Follow-up:No-followup
+-CHI-Follow-up:Otherwise
+
 -Complex-long
+
 -No-response+No-follow-up
- 
+
  
 List of labels 2 (perspective of the caregivers) 
  
--Initiation:Non-Information-seeking(action, attention, rhetorical)
--Initiation:Information-seeking(status-check,clarification,specific)
--Initiation:Pedagogical:specific:fact-based
--Initiation:Pedagogical:specific:explanation-seeking
--Initiation:Pedagogical:specific:polar
--Initiation:Pedagogical:specific:choice
--Initiation:Pedagogical:specific:other
--Initiation:Pedagogical:generic:fact-based
--Initiation:Pedagogical:generic:explanation-seeking
--Initiation:Pedagogical:generic:polar
--Initiation:Pedagogical:generic:choice
--Initiation:Pedagogical:generic:other
--Initiation:Other
- 
--Response:Answer:no-explanation-needed
--Response:Answer:with-explanation-low-quality
--Response:Answer:with-explanation-high-quality
--Response:Answer:non-verbal
--Response:Non-answer:declarative:do-not-know
--Response:Non-answer:declarative:change-topic
--Response:Non-answer:declarative:dependent
--Response:Non-answer:interrogative:change-topic
--Response:Non-answer:interrogative:dependent
--Response:Feedback
--Response:No-response
--Response:Other (correction, final words missing…)
- 
--Follow-up:Agree
--Follow-up:Repeat-answer
--Follow-up:Followup-question
--Follow-up:Agree+followup-question
--Follow-up:Disagree
--Follow-up:Repeat-question
--Follow-up:Disagree+repeat-question
--Follow-up:Disagree+followup-question
--Follow-up:Give-response
--Follow-up:Add-info
--Follow-up:Questioning-answer
--Follow-up:Ask-clarification
--Follow-up:Encouragement-to-search
--Follow-up:No-response
--Follow-up:Other
- 
--Annotation-trouble
--Complex-long
--No-response+No-follow-up
+-PAR-Initiation:Non-Information-seeking
+-PAR-Initiation:Information-seeking:fact-based 
+-PAR-Initiation:Information-seeking:explanation-based
 
+-CHI-Response:Answer:no-explanation-needed
+-CHI-Response:Answer:with-explanation-low-quality
+-CHI-Response:Answer:with-explanation-high-quality
+-CHI-Response:Answer:non-verbal
+-CHI-Response:Non-answer:declarative
+-CHI-Response:Non-answer:interrogative
+-CHI-Response:No-response
+-CHI-Response:No-label
+ 
+-PAR-Follow-up:Signal-agreement
+-PAR-Follow-up:Signal-disagreement
+-PAR-Follow-up:Followup-question
+-PAR-Follow-up:Re-ask-initial-question
+-PAR-Follow-up:Repeat-answer
+-PAR-Follow-up:Give-response
+-PAR-Follow-up:No-followup
+-PAR-Follow-up:Add-info
+-PAR-Follow-up:other
+
+-Complex-long
+
+-No-response+No-follow-up

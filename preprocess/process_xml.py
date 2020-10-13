@@ -3,7 +3,7 @@ from os import system
 import sys
 import json
 from parser import translate_to_json
-from threading import main_thread
+# from threading import main_thread
 from xml.etree.ElementTree import parse, fromstring, ElementTree
 
 

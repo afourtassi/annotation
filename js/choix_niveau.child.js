@@ -33,13 +33,21 @@ n_div.append($('<div>').attr('id','entete').html("<h1 id='titre'> MACANNOT - Int
 n_table=$('<table>').css('width','250px');
 n_table.append($('<tr>').append($('<td>').text('id')).append($('<td>').append($('<input>').attr('id','chid').attr('type','text').attr('value', 'a'))));
 n_table.append($('<tr>').append($('<td>').text('password')).append($('<td>').append($('<input>').attr('id','chmdp').attr('type','text').attr('value', 'a'))));  
-n_table.append($('<tr>').append($('<td>').text('')).append($('<td>').append($('<button>').attr('id','gologin').text('Envoyer').click(function(event) 
- {
- authorname=$("#chid").val();
- console.log("id="+authorname+"&mdp="+$("#chmdp").val());
- xhttp.open("GET", "annotator?id="+authorname+"&mdp="+$("#chmdp").val(),true);
- xhttp.send();
- })))); 
+n_table.append($('<tr>').append($('<td>').text(''))
+  // .append($('<td>').append($('<button>').attr('id','gologin').text('Envoyer').click(function(event) {
+  //   authorname=$("#chid").val();
+  //   console.log("id="+authorname+"&mdp="+$("#chmdp").val());
+  //   xhttp.open("GET", "annotator?id="+authorname+"&mdp="+$("#chmdp").val(),true);
+  //   xhttp.send();
+  // })))
+  .append(
+  $('<td>').append($('<button>').attr('id','goupload').text('Envoyer(test)').click(function(event) {
+    authorname=$("#chid").val();
+    console.log("id="+authorname+"&mdp="+$("#chmdp").val());
+    xhttp.open("GET", "serverless?id="+authorname+"&mdp="+$("#chmdp").val(),true);
+    xhttp.send();
+  })))
+);
 n_div.append(n_table);
 $('body').append(n_div);
 ////////
@@ -59,6 +67,7 @@ xhttp.onreadystatechange = function()
   //  xhttp.open("GET", tlevel[0], true);
    xhttp.open("GET", "annotation?id="+authorname+"&path="+tlevel[0], true);
    xhttp.send();
+   $("#div#conteneur").append();
    }
   else
   if (this.responseText=="IDKO") { $('body').append($('<h2>').text("Annotateur inconnu")); }

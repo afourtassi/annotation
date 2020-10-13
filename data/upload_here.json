@@ -1,0 +1,133 @@
+{
+    "header": {
+        "id": "11312/c-00036884-1",
+        "filename": "Lyon/Anais/10023b.json",
+        "labels_1": [
+            "NULL",
+            "CHI-Initiation:Information-seeking:fact-based",
+            "CHI-Initiation:Information-seeking:explanation-seeking",
+            "CHI-Initiation:Non-information-seeking",
+            "PAR-Response:Answer:no-explanation-needed",
+            "PAR-Response:Answer:with-explanation-low-quality",
+            "PAR-Response:Answer:with-explanation-high-quality",
+            "PAR-Response:Non-answer:declarative",
+            "PAR-Response:Non-answer:interrogative",
+            "PAR-Response:No-response",
+            "CHI-Follow-up:Signal-agreement",
+            "CHI-Follow-up:Signal-disagreement",
+            "CHI-Follow-up:Repeat-answer",
+            "CHI-Follow-up:Followup-question",
+            "CHI-Follow-up:Re-ask-initial-question",
+            "CHI-Follow-up:Own-explanation",
+            "CHI-Follow-up:No-followup",
+            "CHI-Follow-up:Otherwise",
+            "Complex-long",
+            "No-response+No-follow-up"
+        ],
+        "labels_2": [
+            "NULL",
+            "PAR-Initiation:Non-Information-seeking",
+            "PAR-Initiation:Information-seeking:fact-based ",
+            "PAR-Initiation:Information-seeking:explanation-based",
+            "CHI-Response:Answer:no-explanation-needed",
+            "CHI-Response:Answer:with-explanation-low-quality",
+            "CHI-Response:Answer:with-explanation-high-quality",
+            "CHI-Response:Answer:non-verbal",
+            "CHI-Response:Non-answer:declarative",
+            "CHI-Response:Non-answer:interrogative",
+            "CHI-Response:No-response",
+            "CHI-Response:No-label",
+            "PAR-Follow-up:Signal-agreement",
+            "PAR-Follow-up:Signal-disagreement",
+            "PAR-Follow-up:Followup-question",
+            "PAR-Follow-up:Re-ask-initial-question",
+            "PAR-Follow-up:Repeat-answer",
+            "PAR-Follow-up:Give-response",
+            "PAR-Follow-up:No-followup",
+            "PAR-Follow-up:Add-info",
+            "PAR-Follow-up:other",
+            "Complex-long",
+            "No-response+No-follow-up"
+        ],
+        "participants": [
+            {
+                "id": "CHI",
+                "name": "Anais",
+                "role": "Target_Child",
+                "language": "fra",
+                "age": "P1Y00M23D",
+                "sex": "female"
+            },
+            {
+                "id": "MOT",
+                "name": "Mother",
+                "role": "Mother",
+                "language": "fra",
+                "age": "P25Y",
+                "sex": "female"
+            },
+            {
+                "id": "INV",
+                "name": "G\u00e9raldine",
+                "role": "Investigator",
+                "language": "fra",
+                "age": "P25Y",
+                "sex": "female"
+            }
+        ],
+        "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "http://www.talkbank.org/ns/talkbank https://talkbank.org/software/talkbank.xsd",
+        "Media": "10023b",
+        "Mediatypes": "video",
+        "DesignType": "long",
+        "ActivityType": "toyplay",
+        "GroupType": "TD",
+        "PID": "11312/c-00036884-1",
+        "Version": "2.16.0",
+        "Lang": "fra",
+        "Corpus": "Lyon",
+        "Date": "2002-07-09"
+    },
+    "annotation": {},
+    "documents": [
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": [
+                "Carole Vinson , Emilie Charillon"
+            ],
+            "explanation": "Transcriber"
+        },
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": [
+                "09-JUL-2002"
+            ],
+            "explanation": "Date"
+        },
+        {
+            "type": "comment",
+            "annotable": false,
+            "turn": [
+                "long, toyplay, TD"
+            ],
+            "explanation": "Types"
+        },
+        {
+            "type": "utterance",
+            "annotable": true,
+            "turn": "yyy . [media]",
+            "explanation": "Actions: Ana se l\u00e8ve en s'aidant du piano et se met \u00e0 jouer avec .",
+            "subject": "CHI",
+            "id": "u0",
+            "label_1_a": "NULL",
+            "label_1_b": "NULL",
+            "label_1_c": "NULL",
+            "label_2_a": "NULL",
+            "label_2_b": "NULL",
+            "label_2_c": "NULL",
+            "status_seg": "G",
+            "status_lab": "G"
+        }
+    ]
+}
