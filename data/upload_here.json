@@ -1,7 +1,7 @@
 {
     "header": {
-        "id": "11312/c-00036884-1",
-        "filename": "Lyon/Anais/10023b.json",
+        "id": "12345678",
+        "filename": "upload_here.json",
         "labels_1": [
             "NULL",
             "CHI-Initiation:Information-seeking:fact-based",
@@ -76,16 +76,16 @@
             }
         ],
         "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "http://www.talkbank.org/ns/talkbank https://talkbank.org/software/talkbank.xsd",
-        "Media": "10023b",
+        "Media": "000000",
         "Mediatypes": "video",
         "DesignType": "long",
         "ActivityType": "toyplay",
         "GroupType": "TD",
-        "PID": "11312/c-00036884-1",
-        "Version": "2.16.0",
+        "PID": "12345678",
+        "Version": "1.0",
         "Lang": "fra",
-        "Corpus": "Lyon",
-        "Date": "2002-07-09"
+        "Corpus": "test-corpus",
+        "Date": "2020-10-13"
     },
     "annotation": {},
     "documents": [
@@ -93,31 +93,31 @@
             "type": "comment",
             "annotable": false,
             "turn": [
-                "Carole Vinson , Emilie Charillon"
+                "Click 'Load From File' button to upload a JSON file."
             ],
-            "explanation": "Transcriber"
+            "explanation": ""
         },
         {
             "type": "comment",
             "annotable": false,
             "turn": [
-                "09-JUL-2002"
+                "Raw JSON files are stored in the dropbox.\n<a href=\"https://www.dropbox.com/home/QuestioProjectData/Raw%20Data%20(October%20version)\"> Click here to link to our dropbox. </a>"
             ],
-            "explanation": "Date"
+            "explanation": ""
         },
         {
             "type": "comment",
             "annotable": false,
             "turn": [
-                "long, toyplay, TD"
+                "Remember to Download the annotations to your local machine as soon as you are leaving the page (annotations <b>WILL NOT</b> be stored on Heroku server)."
             ],
-            "explanation": "Types"
+            "explanation": ""
         },
         {
             "type": "utterance",
             "annotable": true,
-            "turn": "yyy . [media]",
-            "explanation": "Actions: Ana se l\u00e8ve en s'aidant du piano et se met \u00e0 jouer avec .",
+            "turn": "This is an utterance.",
+            "explanation": "This is an explanation.",
             "subject": "CHI",
             "id": "u0",
             "label_1_a": "NULL",

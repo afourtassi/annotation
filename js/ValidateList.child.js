@@ -355,7 +355,6 @@ function ValidateList (corpus, links_mode)
 
 		// On crée le noeud contenant le contenu de la "phrase"
 		var sentence_node = $("<div class=\"sentence_content\">");
-//console.log("ZOZO");
 
 		// Tag the speaker in a <div.
 		var current_speaker_container = $("<div class=\"speaker\">");
