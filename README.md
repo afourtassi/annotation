@@ -1,14 +1,19 @@
 # MACANNOT for CHILDES Corpora
 ## Data Preparation
 
-By default, I include a  `demo.json` under `./data/`.
-
+<del>
 To download and process corpus, just run the command:
 ```bash
 python3 preprocess/downloader.py
 ```
+</del>
 
-This will take a few minutes. Then you should be able to find the processed JSON files under `./data/`, structured like:
+To download and prepare corpus, now you have to register an account to access https://git.talkbank.org:3000/fileListing?&bp=data&path=childes/data-xml/, download the `xml` files and put them under `./data/`. Then run the command:
+```bash
+python3 preprocess/childes2json.py
+```
+
+This will take a few seconds. Then you should be able to find the processed JSON files under `./data/`, structured like:
 
 ```
 |- data
